@@ -1,299 +1,198 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>醫療與觀光產業結合歷程</title>
+    <title>數位媒體科技課程入口</title>
+    <!-- 載入 Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* 使用 Inter 字體作為主要字體 */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            color: #1f2937;
+            transition: background-color 0.3s, color 0.3s;
         }
-        .container {
-            max-width: 1024px;
-            margin: auto;
-            padding: 1rem;
-        }
-        .timeline-item {
-            position: relative;
-            padding: 1rem 0 1rem 2rem;
-            border-left: 2px solid #6b7280;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            top: 1.5rem;
-            left: -10px;
-            width: 20px;
-            height: 20px;
-            background-color: #3b82f6;
-            border-radius: 50%;
-        }
-        .card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(5px);
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 2rem;
-            border-radius: 1rem;
-            width: 80%;
-            max-width: 600px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
-        .close-button {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            font-size: 2rem;
-            font-weight: bold;
-            color: #aaa;
-        }
-        .close-button:hover,
-        .close-button:focus {
-            color: #000;
-            text-decoration: none;
+        .dark-mode-toggle {
             cursor: pointer;
-        }
-        .map-marker {
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-        .map-marker:hover {
-            transform: scale(1.1);
-        }
-        .hidden {
-            display: none;
+            user-select: none;
         }
     </style>
-</head>
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
-
-    <div class="container mx-auto p-6">
-        <div class="text-center my-12">
-            <h1 class="text-4xl font-bold text-gray-800">醫療與觀光產業結合歷程(2025-09-18)</h1>
-            <p class="mt-4 text-lg text-gray-600">
-                探索醫療與觀光如何從單純的服務，演變成一個全球性的新興產業。
-            </p>
-        </div>
-
-        <!-- 歷史沿革 - 時間軸 -->
-        <section id="history" class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">歷史沿革</h2>
-            <div class="relative pl-8">
-                <div class="timeline-item">
-                    <h3 class="font-semibold text-xl text-blue-600">古希臘時期</h3>
-                    <p class="text-gray-600 mt-2">
-                        利用溫泉、礦泉水進行療養，被視為一種宗教儀式。
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <h3 class="font-semibold text-xl text-blue-600">羅馬帝國時期</h3>
-                    <p class="text-gray-600 mt-2">
-                        建立龐大的公共浴場，結合社交與醫療功能，吸引各地民眾。
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <h3 class="font-semibold text-xl text-blue-600">中世紀至文藝復興</h3>
-                    <p class="text-gray-600 mt-2">
-                        溫泉療養延續，歐洲各地的療養勝地興起，成為貴族的度假選擇。
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <h3 class="font-semibold text-xl text-blue-600">20世紀初期</h3>
-                    <p class="text-gray-600 mt-2">
-                        交通運輸發展，使得跨國就醫變得更便利。
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <h3 class="font-semibold text-xl text-blue-600">21世紀初期</h3>
-                    <p class="text-gray-600 mt-2">
-                        網路普及，醫療觀光概念正式成形。
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 發展模式 - 互動式地圖 -->
-        <section id="development" class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">發展模式</h2>
-            <div class="relative w-full aspect-video bg-gray-300 rounded-lg shadow-lg overflow-hidden flex items-center justify-center">
-                <p class="text-gray-500 font-bold text-center p-4">互動式地圖示意圖 - 點擊下方的標註來查看詳情</p>
-                
-                <!-- 地圖標註點 -->
-                <div id="marker-thailand" class="map-marker absolute w-6 h-6 rounded-full bg-red-500 border-2 border-white shadow-md" style="top: 60%; left: 80%;"></div>
-                <div id="marker-korea" class="map-marker absolute w-6 h-6 rounded-full bg-red-500 border-2 border-white shadow-md" style="top: 35%; left: 90%;"></div>
-                <div id="marker-singapore" class="map-marker absolute w-6 h-6 rounded-full bg-red-500 border-2 border-white shadow-md" style="top: 75%; left: 85%;"></div>
-                <div id="marker-india" class="map-marker absolute w-6 h-6 rounded-full bg-red-500 border-2 border-white shadow-md" style="top: 55%; left: 60%;"></div>
-                <div id="marker-taiwan" class="map-marker absolute w-6 h-6 rounded-full bg-red-500 border-2 border-white shadow-md" style="top: 48%; left: 93%;"></div>
-
-            </div>
-        </section>
-
-        <!-- 成功案例 - 卡片式介面 -->
-        <section id="cases" class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">成功案例</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- 案例一 -->
-                <div class="card bg-white rounded-lg shadow-md p-6 cursor-pointer" onclick="showCase(1)">
-                    <h3 class="text-xl font-semibold text-gray-800">心臟病患者的重生之旅</h3>
-                    <p class="text-gray-600 mt-4">
-                        一位美國心臟病患者，因為國內高昂的手術費用而轉往印度接受治療...
-                    </p>
-                </div>
-                <!-- 案例二 -->
-                <div class="card bg-white rounded-lg shadow-md p-6 cursor-pointer" onclick="showCase(2)">
-                    <h3 class="text-xl font-semibold text-gray-800">南韓的「美麗」產業</h3>
-                    <p class="text-gray-600 mt-4">
-                        一位中國遊客，為了整形而到南韓，不僅在當地接受了專業的醫美服務...
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 未來展望 - 視覺化圖表 -->
-        <section id="future" class="mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">未來展望</h2>
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="p-4 bg-blue-100 rounded-md">
-                        <h4 class="font-bold text-lg text-blue-800">人工智慧 (AI)</h4>
-                        <p class="text-gray-700 mt-2">協助遠端診斷、預約服務，並為患者量身打造醫療旅遊行程。</p>
-                    </div>
-                    <div class="p-4 bg-green-100 rounded-md">
-                        <h4 class="font-bold text-lg text-green-800">個人化精準醫療</h4>
-                        <p class="text-gray-700 mt-2">結合基因檢測與個人健康數據，提供客製化醫療觀光體驗。</p>
-                    </div>
-                    <div class="p-4 bg-purple-100 rounded-md">
-                        <h4 class="font-bold text-lg text-purple-800">永續與健康旅遊</h4>
-                        <p class="text-gray-700 mt-2">與環保、在地文化結合，創造更具意義的旅遊模式。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="text-center py-8 text-gray-500 border-t border-gray-300 mt-12">
-            <p>&copy; 2024 醫療觀光互動網頁。所有權利保留。</p>
-        </footer>
-    </div>
-
-    <!-- Modal for Map Markers -->
-    <div id="mapModal" class="modal">
-        <div class="modal-content">
-            <span class="close-button" onclick="closeModal('mapModal')">&times;</span>
-            <h3 id="modalTitle" class="text-2xl font-bold mb-4"></h3>
-            <p id="modalContent" class="text-gray-700"></p>
-        </div>
-    </div>
-
-    <!-- Modal for Case Studies -->
-    <div id="caseModal" class="modal">
-        <div class="modal-content">
-            <span class="close-button" onclick="closeModal('caseModal')">&times;</span>
-            <h3 id="caseModalTitle" class="text-2xl font-bold mb-4"></h3>
-            <p id="caseModalContent" class="text-gray-700"></p>
-        </div>
-    </div>
-
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Data for map markers
-            const mapData = {
-                'marker-thailand': {
-                    title: '泰國：醫美與觀光的完美結合',
-                    content: '泰國以其高品質的醫美、牙科、心臟手術聞名，並結合其豐富的觀光資源，吸引全球患者。'
-                },
-                'marker-korea': {
-                    title: '南韓：全球醫美整形中心',
-                    content: '南韓專注於醫美整形，將其打造成一個結合購物、娛樂的綜合性產業，吸引無數追求美麗的遊客。'
-                },
-                'marker-singapore': {
-                    title: '新加坡：高階醫療服務樞紐',
-                    content: '新加坡以高階的癌症治療、神經外科手術為主，吸引追求頂級醫療服務的國際患者。'
-                },
-                'marker-india': {
-                    title: '印度：高性價比的醫療方案',
-                    content: '印度提供高性價比的醫療服務，特別是心臟手術、關節置換等，是許多患者的經濟選擇。'
-                },
-                'marker-taiwan': {
-                    title: '臺灣：高水準醫療結合特色旅遊',
-                    content: '臺灣的醫療優勢如器官移植、試管嬰兒、健檢等，與豐富的文化、美食、自然景觀結合，提供獨特的醫療觀光體驗。'
-                }
-            };
-
-            // Data for case studies
-            const caseData = {
-                1: {
-                    title: '案例一：心臟病患者的重生之旅',
-                    content: '一位美國心臟病患者，因國內高昂的手術費用而轉往印度接受治療。他成功地完成了心臟手術，不僅省下了大筆費用，還在康復期間體驗了印度的豐富文化與風情，對他而言，這不僅是一場醫療之旅，更是一次身心靈的重生。'
-                },
-                2: {
-                    title: '案例二：南韓的「美麗」產業',
-                    content: '一位中國遊客，為了整形而到南韓。在當地，她不僅獲得了專業的醫美服務，還利用時間參觀了當地的熱門景點、享受購物樂趣。她將這次成功的經歷分享在社群媒體上，引發了更多人對南韓醫療觀光的興趣。'
-                }
-            };
-
-            // Event listeners for map markers
-            document.querySelectorAll('.map-marker').forEach(marker => {
-                marker.addEventListener('click', (e) => {
-                    const id = e.target.id;
-                    const data = mapData[id];
-                    if (data) {
-                        document.getElementById('modalTitle').innerText = data.title;
-                        document.getElementById('modalContent').innerText = data.content;
-                        document.getElementById('mapModal').style.display = 'block';
+        tailwind.config = {
+            darkMode: 'class', // 啟用類別模式切換暗黑模式
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#3b82f6',
+                        'accent-yellow': '#f59e0b',
                     }
-                });
+                }
+            }
+        }
+
+        // JavaScript for Dark Mode Toggle and Initial Setup
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('dark-mode-toggle');
+            const html = document.documentElement;
+
+            // 檢查本地儲存或系統偏好設定
+            const isDarkMode = localStorage.getItem('theme') === 'dark' || 
+                                (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            
+            if (isDarkMode) {
+                html.classList.add('dark');
+            } else {
+                html.classList.remove('dark');
+            }
+            
+            // 更新切換按鈕的文字
+            const updateToggleText = () => {
+                toggle.innerHTML = html.classList.contains('dark') ? 
+                    '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>' : 
+                    '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>';
+            };
+
+            updateToggleText();
+
+
+            toggle.addEventListener('click', () => {
+                if (html.classList.contains('dark')) {
+                    html.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    html.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+                updateToggleText();
             });
-
-            // Function to show case study modal
-            window.showCase = function(caseId) {
-                const data = caseData[caseId];
-                if (data) {
-                    document.getElementById('caseModalTitle').innerText = data.title;
-                    document.getElementById('caseModalContent').innerText = data.content;
-                    document.getElementById('caseModal').style.display = 'block';
-                }
-            };
-
-            // Function to close any modal
-            window.closeModal = function(modalId) {
-                document.getElementById(modalId).style.display = 'none';
-            };
-
-            // Close modal when clicking outside of it
-            window.onclick = function(event) {
-                const mapModal = document.getElementById('mapModal');
-                const caseModal = document.getElementById('caseModal');
-                if (event.target == mapModal) {
-                    mapModal.style.display = "none";
-                }
-                if (event.target == caseModal) {
-                    caseModal.style.display = "none";
-                }
-            };
         });
     </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+
+    <!-- 主容器 -->
+    <div class="max-w-4xl mx-auto p-4 sm:p-8">
+
+        <!-- Header and Dark Mode Toggle -->
+        <header class="flex justify-between items-center mb-10 border-b pb-4 border-gray-200 dark:border-gray-700">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-primary-blue dark:text-blue-400 tracking-tight">
+                數位媒體科技
+            </h1>
+            <button id="dark-mode-toggle" 
+                    class="dark-mode-toggle p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-150 ease-in-out"
+                    aria-label="切換深色/淺色模式">
+                <!-- SVG Icon will be set by JS -->
+            </button>
+        </header>
+
+        <p class="text-xl sm:text-2xl font-light mb-12 text-center sm:text-left">
+            歡迎來到數位媒體科技課程！以下是本學期的課程內容與資源。
+        </p>
+
+        <!-- 課程週次內容列表 (條列式格式) -->
+        <!-- 使用 space-y-8 來創造垂直間距 -->
+        <div class="space-y-8">
+            
+            <!-- Week 1 Item -->
+            <div class="course-item bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl border-l-8 border-primary-blue dark:border-blue-400">
+                <h2 class="text-3xl font-bold mb-3 text-gray-900 dark:text-gray-50">
+                    第一週：醫療與觀光產業結合歷程
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-5 text-lg">
+                    醫療與觀光產業結合歷程
+                </p>
+                <div class="space-y-3">
+                    <a href="INTRO/" class="flex items-center text-lg text-primary-blue hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-200 font-medium transition duration-150 ease-in-out">
+                        <!-- Icon: Book/Read -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.208 5 7.5 5A6.5 6.5 0 003 12v.227c0 7.519 1.48 8.156 4.5 8.784m-4.5-8.784C5.12 11.237 6.302 11 7.5 11a6.5 6.5 0 014.5 3.227V6.253c0-3.37-2.685-6.253-6-6.253S0 2.883 0 6.253v13c0 3.37 2.685 6.253 6 6.253s6-2.883 6-6.253" />
+                        </svg>
+                        點擊進入
+                    </a>
+                </div>
+            </div>
+
+            <!-- Week 2 Item -->
+            <div class="course-item bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl border-l-8 border-accent-yellow dark:border-yellow-500">
+                <h2 class="text-3xl font-bold mb-3 text-gray-900 dark:text-gray-50">
+                    第二週：多媒體元素：影像與聲音
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-5 text-lg">
+                    深入探討數位影像的格式、壓縮技術，以及數位音訊的採樣與編碼。
+                </p>
+                <div class="space-y-3">
+                    <a href="#" class="flex items-center text-lg text-primary-blue hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-200 font-medium transition duration-150 ease-in-out">
+                        <!-- Icon: Camera/Image -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L14 14m-4-4l3.586-3.586a2 2 0 012.828 0L20 12m-2-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        影像處理教學
+                    </a>
+                    <a href="#" class="flex items-center text-lg text-primary-blue hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-200 font-medium transition duration-150 ease-in-out">
+                        <!-- Icon: Speaker/Audio -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.818 5.818a2 2 0 012.828 0L12 10.343l3.354-3.354a.5.5 0 01.707.707l-4.243 4.243-4.243-4.243a.5.5 0 010-.707z" />
+                        </svg>
+                        聲音編碼範例
+                    </a>
+                    <a href="#" class="flex items-center text-lg text-primary-blue hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-200 font-medium transition duration-150 ease-in-out">
+                        <!-- Icon: Homework/Assignment -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        作業 #1 說明
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Week 3 Item -->
+            <div class="course-item bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-xl transition duration-300 hover:shadow-2xl border-l-8 border-green-500 dark:border-green-400">
+                <h2 class="text-3xl font-bold mb-3 text-gray-900 dark:text-gray-50">
+                    第三週：網路基礎與前端初探
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-5 text-lg">
+                    認識網際網路的運作原理、URL 與 HTTP，並開始學習 HTML 結構與基本的 CSS 樣式。
+                </p>
+                <div class="space-y-3">
+                    <a href="#" class="flex items-center text-lg text-primary-blue hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-200 font-medium transition duration-150 ease-in-out">
+                        <!-- Icon: Code -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                        HTML & CSS 基礎文件
+                    </a>
+                    <a href="#" class="flex items-center text-lg text-primary-blue hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-200 font-medium transition duration-150 ease-in-out">
+                        <!-- Icon: Link/World -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21L11 3v6H3l10 8V10.5z" />
+                        </svg>
+                        網路協定說明影片
+                    </a>
+                </div>
+            </div>
+
+            <!-- Placeholder for future weeks -->
+            <div class="course-item bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-lg border-l-8 border-gray-400 dark:border-gray-500 flex flex-col justify-center items-center text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-400 dark:text-gray-500 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                </svg>
+                <h3 class="text-xl font-semibold text-gray-500 dark:text-gray-400">
+                    第四週起...
+                </h3>
+                <p class="text-gray-400 dark:text-gray-500 mt-1">
+                    更多內容即將更新！
+                </p>
+            </div>
+
+
+        </div>
+        
+        <!-- Footer -->
+        <footer class="mt-16 pt-6 border-t border-gray-200 dark:border-gray-700 text-center text-sm text-gray-500 dark:text-gray-400">
+            <p>&copy; 2024 數位媒體科技課程教材入口</p>
+        </footer>
+
+    </div>
 </body>
 </html>
-

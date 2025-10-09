@@ -1,0 +1,908 @@
+
+<!DOCTYPE html><html lang="zh-TW" class="scroll-smooth"><head>
+    <style id="__________cytoscape_stylesheet">.__________cytoscape_container { position: relative; }</style><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI人工智慧技術全景 | 智慧應用領域完整指南</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/preline@2.3.0/dist/preline.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;900&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Noto Sans TC', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<script src="https://felo.ai/js/iframe.js?v=1759997777693"></script>
+ <style>
+* {
+  scrollbar-width: thin !important;
+  scrollbar-color: #bfc5ce transparent !important;
+}
+*::-webkit-scrollbar {
+  width: 6px !important;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #bfc5ce !important;
+  border-radius: 9999px !important;
+}
+*::-webkit-scrollbar-track {
+  background-color: transparent !important;
+  border-radius: 9999px !important;
+}
+</style><style id="felo-iframe-styles">html,body{margin:0 !important;padding:0 !important;}</style></head>
+<body class="font-sans bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200" contenteditable="false" spellcheck="false">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-xl font-bold text-primary-600 dark:text-primary-400">AI智慧應用</h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#overview" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">概覽</a>
+                        <a href="#applications" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">應用領域</a>
+                        <a href="#technology" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">核心技術</a>
+                        <a href="#ethics" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">倫理挑戰</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" data-element-id="8b290c87-47ff-4666-8268-b133df3fad22">
+                        <i class="fas fa-sun dark:hidden"></i>
+                        <i class="fas fa-moon hidden dark:inline"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900">
+        <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-5xl mx-auto" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div class="mb-8">
+                    <img src="https://api.felo.ai/images/s/4dJI1QZSHz" alt="AI人工智慧技術應用心智圖" class="mx-auto rounded-2xl shadow-2xl max-w-full h-auto" data-element-id="dc4d1bb9-ad40-46aa-b345-e1bc6fe3fa87">
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent leading-tight">
+                    AI智慧未來
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-12 leading-relaxed font-light">
+                    探索人工智慧在九大領域的深度應用，從智慧金融到倫理挑戰，<br>全方位解析AI技術如何重塑我們的世界
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#overview" class="inline-flex items-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-full transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        <i class="fas fa-chart-line mr-3"></i>
+                        探索應用領域
+                    </a>
+                    <a href="#technology" class="inline-flex items-center px-8 py-4 bg-white dark:bg-gray-800 border-2 border-primary-600 text-primary-600 dark:text-primary-400 font-semibold rounded-full hover:bg-primary-50 dark:hover:bg-gray-700 transition-all duration-200">
+                        <i class="fas fa-cogs mr-3"></i>
+                        核心技術
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-2xl text-gray-400"></i>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">AI技術全景概覽</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    人工智慧技術正在九大核心領域創造革命性變革，每個領域都蘊藏著改變世界的巨大潛力
+                </p>
+            </div>
+            
+            <div class="mb-16" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div class="mermaid" id="ai-overview-chart" data-processed="true"><svg aria-roledescription="mindmap" role="graphics-document document" viewBox="5 5 994.7906494140625 569.8333740234375" style="max-width: 994.7906494140625px;" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="100%" id="mermaid-1759997777302"><style>#mermaid-1759997777302{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-1759997777302 .error-icon{fill:#552222;}#mermaid-1759997777302 .error-text{fill:#552222;stroke:#552222;}#mermaid-1759997777302 .edge-thickness-normal{stroke-width:2px;}#mermaid-1759997777302 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1759997777302 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1759997777302 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1759997777302 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1759997777302 .marker{fill:#9ca3af;stroke:#9ca3af;}#mermaid-1759997777302 .marker.cross{stroke:#9ca3af;}#mermaid-1759997777302 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1759997777302 .edge{stroke-width:3;}#mermaid-1759997777302 .section--1 rect,#mermaid-1759997777302 .section--1 path,#mermaid-1759997777302 .section--1 circle,#mermaid-1759997777302 .section--1 polygon,#mermaid-1759997777302 .section--1 path{fill:hsl(240, 100%, 76.2745098039%);}#mermaid-1759997777302 .section--1 text{fill:#ffffff;}#mermaid-1759997777302 .node-icon--1{font-size:40px;color:#ffffff;}#mermaid-1759997777302 .section-edge--1{stroke:hsl(240, 100%, 76.2745098039%);}#mermaid-1759997777302 .edge-depth--1{stroke-width:17;}#mermaid-1759997777302 .section--1 line{stroke:hsl(60, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777302 .disabled,#mermaid-1759997777302 .disabled circle,#mermaid-1759997777302 .disabled text{fill:lightgray;}#mermaid-1759997777302 .disabled text{fill:#efefef;}#mermaid-1759997777302 .section-0 rect,#mermaid-1759997777302 .section-0 path,#mermaid-1759997777302 .section-0 circle,#mermaid-1759997777302 .section-0 polygon,#mermaid-1759997777302 .section-0 path{fill:hsl(60, 100%, 73.5294117647%);}#mermaid-1759997777302 .section-0 text{fill:black;}#mermaid-1759997777302 .node-icon-0{font-size:40px;color:black;}#mermaid-1759997777302 .section-edge-0{stroke:hsl(60, 100%, 73.5294117647%);}#mermaid-1759997777302 .edge-depth-0{stroke-width:14;}#mermaid-1759997777302 .section-0 line{stroke:hsl(240, 100%, 83.5294117647%);stroke-width:3;}#mermaid-1759997777302 .disabled,#mermaid-1759997777302 .disabled circle,#mermaid-1759997777302 .disabled text{fill:lightgray;}#mermaid-1759997777302 .disabled text{fill:#efefef;}#mermaid-1759997777302 .section-1 rect,#mermaid-1759997777302 .section-1 path,#mermaid-1759997777302 .section-1 circle,#mermaid-1759997777302 .section-1 polygon,#mermaid-1759997777302 .section-1 path{fill:hsl(80, 100%, 76.2745098039%);}#mermaid-1759997777302 .section-1 text{fill:black;}#mermaid-1759997777302 .node-icon-1{font-size:40px;color:black;}#mermaid-1759997777302 .section-edge-1{stroke:hsl(80, 100%, 76.2745098039%);}#mermaid-1759997777302 .edge-depth-1{stroke-width:11;}#mermaid-1759997777302 .section-1 line{stroke:hsl(260, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777302 .disabled,#mermaid-1759997777302 .disabled circle,#mermaid-1759997777302 .disabled text{fill:lightgray;}#mermaid-1759997777302 .disabled text{fill:#efefef;}#mermaid-1759997777302 .section-2 rect,#mermaid-1759997777302 .section-2 path,#mermaid-1759997777302 .section-2 circle,#mermaid-1759997777302 .section-2 polygon,#mermaid-1759997777302 .section-2 path{fill:hsl(270, 100%, 76.2745098039%);}#mermaid-1759997777302 .section-2 text{fill:#ffffff;}#mermaid-1759997777302 .node-icon-2{font-size:40px;color:#ffffff;}#mermaid-1759997777302 .section-edge-2{stroke:hsl(270, 100%, 76.2745098039%);}#mermaid-1759997777302 .edge-depth-2{stroke-width:8;}#mermaid-1759997777302 .section-2 line{stroke:hsl(90, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777302 .disabled,#mermaid-1759997777302 .disabled circle,#mermaid-1759997777302 .disabled text{fill:lightgray;}#mermaid-1759997777302 .disabled text{fill:#efefef;}#mermaid-1759997777302 .section-3 rect,#mermaid-1759997777302 .section-3 path,#mermaid-1759997777302 .section-3 circle,#mermaid-1759997777302 .section-3 polygon,#mermaid-1759997777302 .section-3 path{fill:hsl(300, 100%, 76.2745098039%);}#mermaid-1759997777302 .section-3 text{fill:black;}#mermaid-1759997777302 .node-icon-3{font-size:40px;color:black;}#mermaid-1759997777302 .section-edge-3{stroke:hsl(300, 100%, 76.2745098039%);}#mermaid-1759997777302 .edge-depth-3{stroke-width:5;}#mermaid-1759997777302 .section-3 line{stroke:hsl(120, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777302 .disabled,#mermaid-1759997777302 .disabled circle,#mermaid-1759997777302 .disabled text{fill:lightgray;}#mermaid-1759997777302 .disabled text{fill:#efefef;}#mermaid-1759997777302 .section-4 rect,#mermaid-1759997777302 .section-4 path,#mermaid-1759997777302 .section-4 circle,#mermaid-1759997777302 .section-4 polygon,#mermaid-1759997777302 .section-4 path{fill:hsl(330, 100%, 76.2745098039%);}#mermaid-1759997777302 .section-4 text{fill:black;}#mermaid-1759997777302 .node-icon-4{font-size:40px;color:black;}#mermaid-1759997777302 .section-edge-4{stroke:hsl(330, 100%, 76.2745098039%);}#mermaid-1759997777302 .edge-depth-4{stroke-width:2;}#mermaid-1759997777302 .section-4 line{stroke:hsl(150, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777302 .disabled,#mermaid-1759997777302 .disabled circle,#mermaid-1759997777302 .disabled text{fill:lightgray;}#mermaid-1759997777302 .disabled text{fill:#efefef;}#mermaid-1759997777302 .section-5 rect,#mermaid-1759997777302 .section-5 path,#mermaid-1759997777302 .section-5 circle,#mermaid-1759997777302 .section-5 polygon,#mermaid-1759997777302 .section-5 path{fill:hsl(0, 100%, 76.2745098039%);}#mermaid-1759997777302 .section-5 text{fill:black;}#mermaid-1759997777302 .node-icon-5{font-size:40px;color:black;}#mermaid-1759997777302 .section-edge-5{stroke:hsl(0, 100%, 76.2745098039%);}#mermaid-1759997777302 .edge-depth-5{stroke-width:-1;}#mermaid-1759997777302 .section-5 line{stroke:hsl(180, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777302 .disabled,#mermaid-1759997777302 .disabled circle,#mermaid-1759997777302 .disabled text{fill:lightgray;}#mermaid-1759997777302 .disabled text{fill:#efefef;}#mermaid-1759997777302 .section-6 rect,#mermaid-1759997777302 .section-6 path,#mermaid-1759997777302 .section-6 circle,#mermaid-1759997777302 .section-6 polygon,#mermaid-1759997777302 .section-6 path{fill:hsl(30, 100%, 76.2745098039%);}#mermaid-1759997777302 .section-6 text{fill:black;}#mermaid-1759997777302 .node-icon-6{font-size:40px;color:black;}#mermaid-1759997777302 .section-edge-6{stroke:hsl(30, 100%, 76.2745098039%);}#mermaid-1759997777302 .edge-depth-6{stroke-width:-4;}#mermaid-1759997777302 .section-6 line{stroke:hsl(210, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777302 .disabled,#mermaid-1759997777302 .disabled circle,#mermaid-1759997777302 .disabled text{fill:lightgray;}#mermaid-1759997777302 .disabled text{fill:#efefef;}#mermaid-1759997777302 .section-7 rect,#mermaid-1759997777302 .section-7 path,#mermaid-1759997777302 .section-7 circle,#mermaid-1759997777302 .section-7 polygon,#mermaid-1759997777302 .section-7 path{fill:hsl(90, 100%, 76.2745098039%);}#mermaid-1759997777302 .section-7 text{fill:black;}#mermaid-1759997777302 .node-icon-7{font-size:40px;color:black;}#mermaid-1759997777302 .section-edge-7{stroke:hsl(90, 100%, 76.2745098039%);}#mermaid-1759997777302 .edge-depth-7{stroke-width:-7;}#mermaid-1759997777302 .section-7 line{stroke:hsl(270, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777302 .disabled,#mermaid-1759997777302 .disabled circle,#mermaid-1759997777302 .disabled text{fill:lightgray;}#mermaid-1759997777302 .disabled text{fill:#efefef;}#mermaid-1759997777302 .section-8 rect,#mermaid-1759997777302 .section-8 path,#mermaid-1759997777302 .section-8 circle,#mermaid-1759997777302 .section-8 polygon,#mermaid-1759997777302 .section-8 path{fill:hsl(150, 100%, 76.2745098039%);}#mermaid-1759997777302 .section-8 text{fill:black;}#mermaid-1759997777302 .node-icon-8{font-size:40px;color:black;}#mermaid-1759997777302 .section-edge-8{stroke:hsl(150, 100%, 76.2745098039%);}#mermaid-1759997777302 .edge-depth-8{stroke-width:-10;}#mermaid-1759997777302 .section-8 line{stroke:hsl(330, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777302 .disabled,#mermaid-1759997777302 .disabled circle,#mermaid-1759997777302 .disabled text{fill:lightgray;}#mermaid-1759997777302 .disabled text{fill:#efefef;}#mermaid-1759997777302 .section-9 rect,#mermaid-1759997777302 .section-9 path,#mermaid-1759997777302 .section-9 circle,#mermaid-1759997777302 .section-9 polygon,#mermaid-1759997777302 .section-9 path{fill:hsl(180, 100%, 76.2745098039%);}#mermaid-1759997777302 .section-9 text{fill:black;}#mermaid-1759997777302 .node-icon-9{font-size:40px;color:black;}#mermaid-1759997777302 .section-edge-9{stroke:hsl(180, 100%, 76.2745098039%);}#mermaid-1759997777302 .edge-depth-9{stroke-width:-13;}#mermaid-1759997777302 .section-9 line{stroke:hsl(0, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777302 .disabled,#mermaid-1759997777302 .disabled circle,#mermaid-1759997777302 .disabled text{fill:lightgray;}#mermaid-1759997777302 .disabled text{fill:#efefef;}#mermaid-1759997777302 .section-10 rect,#mermaid-1759997777302 .section-10 path,#mermaid-1759997777302 .section-10 circle,#mermaid-1759997777302 .section-10 polygon,#mermaid-1759997777302 .section-10 path{fill:hsl(210, 100%, 76.2745098039%);}#mermaid-1759997777302 .section-10 text{fill:black;}#mermaid-1759997777302 .node-icon-10{font-size:40px;color:black;}#mermaid-1759997777302 .section-edge-10{stroke:hsl(210, 100%, 76.2745098039%);}#mermaid-1759997777302 .edge-depth-10{stroke-width:-16;}#mermaid-1759997777302 .section-10 line{stroke:hsl(30, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777302 .disabled,#mermaid-1759997777302 .disabled circle,#mermaid-1759997777302 .disabled text{fill:lightgray;}#mermaid-1759997777302 .disabled text{fill:#efefef;}#mermaid-1759997777302 .section-root rect,#mermaid-1759997777302 .section-root path,#mermaid-1759997777302 .section-root circle,#mermaid-1759997777302 .section-root polygon{fill:hsl(240, 100%, 46.2745098039%);}#mermaid-1759997777302 .section-root text{fill:#ffffff;}#mermaid-1759997777302 .icon-container{height:100%;display:flex;justify-content:center;align-items:center;}#mermaid-1759997777302 .edge{fill:none;}#mermaid-1759997777302 .mindmap-node-label{dy:1em;alignment-baseline:middle;text-anchor:middle;dominant-baseline:middle;text-align:center;}#mermaid-1759997777302 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g></g><g></g><g class="mindmap-edges"><path class="edge section-edge-0 edge-depth-1" d="M 358.0778882308822,208.77459939932635 L 369.321157546166,235.4684458205814 L380.56442686144976,262.1622922418365"></path><path class="edge section-edge-0 edge-depth-1" d="M 350.27450989134815,180.08213470298816 L 343.48721553803216,129.13599286099165 L336.6999211847162,78.18985101899514"></path><path class="edge section-edge-0 edge-depth-1" d="M 337.45446948970715,192.51498858409775 L 262.08980412382465,180.11227815976093 L186.72513875794215,167.70956773542406"></path><path class="edge section-edge-0 edge-depth-0" d="M 492.50520326937317,288.78099534578774 L 428.61388461784634,246.03629084640096 L364.7225659663195,203.29158634701417"></path><path class="edge section-edge-1 edge-depth-1" d="M 555.572649366701,145.94789807503932 L 519.5692224886888,108.39013506691978 L483.56579561067656,70.83237205880025"></path><path class="edge section-edge-1 edge-depth-1" d="M 580.020027981168,151.56912525894884 L 652.8810406602526,124.59912580198065 L725.7420533393371,97.62912634501245"></path><path class="edge section-edge-1 edge-depth-1" d="M 570.3477078091897,142.4344781112424 L 584.0138614654533,97.8380992987143 L597.6800151217168,53.24172048618618"></path><path class="edge section-edge-1 edge-depth-0" d="M 510.9500307532971,283.3643544952704 L 535.4626030338603,226.94900796875572 L559.9751753144235,170.533661442241"></path><path class="edge section-edge-2 edge-depth-1" d="M 479.87809717592944,217.41061498867663 L 536.3639581162987,229.74375886790628 L592.8498190566679,242.07690274713593"></path><path class="edge section-edge-2 edge-depth-1" d="M 451.9352946019799,207.2518880623624 L 381.4912964000523,170.36009614899402 L311.04729819812474,133.46830423562562"></path><path class="edge section-edge-2 edge-depth-1" d="M 460.7555216207553,199.89172349524122 L 451.68069448131007,170.80732096097003 L442.60586734186484,141.72291842669884"></path><path class="edge section-edge-2 edge-depth-0" d="M 498.4878134867486,283.59590528802613 L 485.09786628953975,255.66635412816183 L471.7079190923309,227.73680296829752"></path><path class="edge section-edge-3 edge-depth-1" d="M 354.5701006153346,401.37043005100554 L 278.1956479666626,434.8921146483825 L201.8211953179906,468.4137992457595"></path><path class="edge section-edge-3 edge-depth-1" d="M 361.5357009233747,408.72739047118336 L 339.61580983588476,452.06938688118476 L317.69591874839483,495.41138329118616"></path><path class="edge section-edge-3 edge-depth-1" d="M 353.34631434418645,396.44998368702164 L 297.8791806669643,400.55880248979156 L242.4120469897422,404.6676212925615"></path><path class="edge section-edge-3 edge-depth-0" d="M 492.7917602830678,305.8758058548563 L 436.6388577842197,346.23184379719225 L380.4859552853716,386.5878817395282"></path><path class="edge section-edge-4 edge-depth-1" d="M 640.8203611199874,423.43496320292417 L 675.6509552458606,460.6295823640763 L710.4815493717338,497.8242015252285"></path><path class="edge section-edge-4 edge-depth-1" d="M 626.0386298660337,426.78613006586045 L 610.22791703399,476.70975893774255 L594.4172042019463,526.6333878096247"></path><path class="edge section-edge-4 edge-depth-1" d="M 645.2582899543635,415.5156668199022 L 723.483638742136,431.6472368758209 L801.7089875299085,447.7788069317396"></path><path class="edge section-edge-4 edge-depth-0" d="M 516.0193746707138,307.26893908007867 L 567.7699001232359,354.8039714698308 L619.5204255757579,402.33900385958293"></path><path class="edge section-edge-5 edge-depth-1" d="M 490.6068649220223,403.02818361784153 L 466.57767395199653,425.91189437966636 L442.5484829819708,448.7956051414912"></path><path class="edge section-edge-5 edge-depth-1" d="M 496.08860154048386,406.68539922072335 L 475.997965298547,458.9664691051405 L455.90732905661014,511.24753898955765"></path><path class="edge section-edge-5 edge-depth-1" d="M 511.48291111167237,403.8517204389846 L 537.4623305812315,432.8260319537401 L563.4417500507907,461.80034346849556"></path><path class="edge section-edge-5 edge-depth-0" d="M 504.42287587333374,312.1117485178992 L 503.2207999887563,344.902732827009 L502.0187241041789,377.69371713611883"></path><path class="edge section-edge-6 edge-depth-1" d="M 760.9764104047085,246.8114148821302 L 834.3269361032606,230.69924549490943 L907.6774618018123,214.58707610768866"></path><path class="edge section-edge-6 edge-depth-1" d="M 761.1196275159194,252.5074239910014 L 842.0581501124105,266.0638172172138 L922.9966727089017,279.62021044342623"></path><path class="edge section-edge-6 edge-depth-1" d="M 755.7671736247205,238.37375125953545 L 785.2492460281283,201.9770816803282 L814.731318431536,165.58041210112097"></path><path class="edge section-edge-6 edge-depth-0" d="M 519.6947592309007,294.24922661237997 L 625.6490431648739,273.5757030811808 L731.6033270988471,252.90217954998167"></path><path class="edge section-edge-7 edge-depth-1" d="M 261.6763516369798,318.1717013327867 L 245.07490636387047,287.66343150409375 L228.47346109076116,257.15516167540085"></path><path class="edge section-edge-7 edge-depth-1" d="M 254.83841497812836,336.71267435980866 L 175.9230031726459,366.9399818815152 L97.00759136716346,397.1672894032218"></path><path class="edge section-edge-7 edge-depth-1" d="M 253.84646567208674,331.2299002499422 L 187.60468742677165,330.71149162848496 L121.36290918145656,330.1930830070277"></path><path class="edge section-edge-7 edge-depth-1" d="M 255.04282970638198,325.4759739026476 L 182.00249833712468,294.4075721911937 L108.96216696786738,263.33917047973983"></path><path class="edge section-edge-7 edge-depth-0" d="M 490.1275167194973,299.2735154093504 L 386.9091970393341,314.2345520503029 L283.69087735917094,329.1955886912554"></path><path class="edge section-edge-8 edge-depth-1" d="M 687.1032759840086,314.73061313586027 L 775.2240240739939,341.41104131106067 L863.3447721639791,368.0914694862611"></path><path class="edge section-edge-8 edge-depth-1" d="M 675.4839538604667,295.63574220314285 L 684.2203671276134,248.56138696042734 L692.95678039476,201.48703171771183"></path><path class="edge section-edge-8 edge-depth-1" d="M 687.7464635947163,310.49541783682656 L 744.6484783988401,310.9184356835834 L801.5504932029639,311.3414535303403"></path><path class="edge section-edge-8 edge-depth-1" d="M 683.605234594441,320.7326329944521 L 712.7285362937951,348.4890451376084 L741.8518379931492,376.2454572807647"></path><path class="edge section-edge-8 edge-depth-0" d="M 519.925742851686,298.303837096992 L 588.8596329048934,303.7528630392525 L657.7935229581008,309.2018889815129"></path></g><g class="mindmap-nodes"><g transform="translate(455.5270752333764, 278.2218173400828)" class="mindmap-node section--1 section-root"><g><path d="M0 0 a14.833593749999999,14.833593749999999 0 0,1 24.72265625,-9.889062500000001
+      a34.611718749999994,34.611718749999994 1 0,1 39.556250000000006,-9.889062500000001
+      a24.72265625,24.72265625 1 0,1 34.611718749999994,19.778125000000003
+
+      a14.833593749999999,14.833593749999999 1 0,1 14.833593749999999,13.229999999999999
+      a19.778125000000003,19.778125000000003 1 0,1 -14.833593749999999,24.57
+
+      a24.72265625,14.833593749999999 1 0,1 -24.72265625,14.833593749999999
+      a34.611718749999994,34.611718749999994 1 0,1 -49.4453125,0
+      a14.833593749999999,14.833593749999999 1 0,1 -24.72265625,-14.833593749999999
+
+      a14.833593749999999,14.833593749999999 1 0,1 -9.889062500000001,-13.229999999999999
+      a19.778125000000003,19.778125000000003 1 0,1 9.889062500000001,-24.57
+
+    H0 V0 Z" class="node-bkg node-cloud" id="node-0"></path></g><g transform="translate(49.4453125, 5)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">AI人工智慧</tspan></tspan></text></g></g></g><g transform="translate(300.25538150231625, 171.05076435271917)" class="mindmap-node section-0"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-1"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">智慧金融</tspan></tspan></text></g></g></g><g transform="translate(334.3869335900157, 252.08612728844363)" class="mindmap-node section-0"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-2"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">智能投顧</tspan></tspan></text></g></g></g><g transform="translate(282.71904957374807, 39.42122136926412)" class="mindmap-node section-0"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-3"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">風控管理</tspan></tspan></text></g></g></g><g transform="translate(119.92422674533304, 141.37379196680263)" class="mindmap-node section-0"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-4"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">客戶服務</tspan></tspan></text></g></g></g><g transform="translate(513.9528183343442, 132.87619859742858)" class="mindmap-node section-1"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-5"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">智慧製造</tspan></tspan></text></g></g></g><g transform="translate(421.1856266430333, 36.10407153641097)" class="mindmap-node section-1"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-6"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">智能生產</tspan></tspan></text></g></g></g><g transform="translate(679.8092629861609, 68.5220530065327)" class="mindmap-node section-1"><g><rect width="120" height="47.8" class="node-bkg node-rect" id="node-7"></rect></g><g transform="translate(60, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">供應鏈優化</tspan></tspan></text></g></g></g><g transform="translate(542.0749045965623, 15)" class="mindmap-node section-1"><g><rect width="120" height="47.8" class="node-bkg node-rect" id="node-8"></rect></g><g transform="translate(60, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">機器人協作</tspan></tspan></text></g></g></g><g transform="translate(413.2233448457031, 190.31089091624085)" class="mindmap-node section-2"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-9"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">智慧醫療</tspan></tspan></text></g></g></g><g transform="translate(555.5045713868943, 221.3766268195717)" class="mindmap-node section-2"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-10"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">輔助診斷</tspan></tspan></text></g></g></g><g transform="translate(245.75924795440153, 102.60930138174717)" class="mindmap-node section-2"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-11"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">藥物研發</tspan></tspan></text></g></g></g><g transform="translate(386.13804411691706, 103.5037510056992)" class="mindmap-node section-2"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-12"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">健康管理</tspan></tspan></text></g></g></g><g transform="translate(316.30532783506294, 371.44187025430176)" class="mindmap-node section-3"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-13"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">智慧政府</tspan></tspan></text></g></g></g><g transform="translate(136.08596809826224, 450.5423590424633)" class="mindmap-node section-3"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-14"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">城市管理</tspan></tspan></text></g></g></g><g transform="translate(258.9262918367066, 484.8969035080678)" class="mindmap-node section-3"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-15"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">公共服務</tspan></tspan></text></g></g></g><g transform="translate(175.4530334988657, 381.8757347252814)" class="mindmap-node section-3"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-16"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">社會治理</tspan></tspan></text></g></g></g><g transform="translate(578.5674125130953, 388.58612559957885)" class="mindmap-node section-4"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-17"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">智慧教育</tspan></tspan></text></g></g></g><g transform="translate(660.7344979786259, 484.87303912857385)" class="mindmap-node section-4"><g><rect width="120" height="47.8" class="node-bkg node-rect" id="node-18"></rect></g><g transform="translate(60, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">個性化學習</tspan></tspan></text></g></g></g><g transform="translate(537.8884215548848, 517.0333922759063)" class="mindmap-node section-4"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-19"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">教學輔助</tspan></tspan></text></g></g></g><g transform="translate(764.3998649711767, 426.908348152063)" class="mindmap-node section-4"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-20"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">教育管理</tspan></tspan></text></g></g></g><g transform="translate(449.4692122441362, 368.78364831393526)" class="mindmap-node section-5"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-21"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">智慧交通</tspan></tspan></text></g></g></g><g transform="translate(379.68613565985686, 435.2401404453975)" class="mindmap-node section-5"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-22"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">自動駕駛</tspan></tspan></text></g></g></g><g transform="translate(398.5267183529578, 501.3492898963458)" class="mindmap-node section-5"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-23"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">交通監控</tspan></tspan></text></g></g></g><g transform="translate(521.4554489183269, 449.06841559354496)" class="mindmap-node section-5"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-24"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">智能物流</tspan></tspan></text></g></g></g><g transform="translate(694.3256985963714, 226.12958882227883)" class="mindmap-node section-6"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-25"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">智慧生活</tspan></tspan></text></g></g></g><g transform="translate(870.3281736101495, 187.46890216754002)" class="mindmap-node section-6"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-26"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">智能家居</tspan></tspan></text></g></g></g><g transform="translate(885.7906016284497, 258.1980456121488)" class="mindmap-node section-6"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-27"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">娛樂休閒</tspan></tspan></text></g></g></g><g transform="translate(772.1727934598852, 130.02457453837758)" class="mindmap-node section-6"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-28"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">個人助理</tspan></tspan></text></g></g></g><g transform="translate(216.8460063452918, 307.44728676052307)" class="mindmap-node section-7"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-29"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">基礎技術</tspan></tspan></text></g></g></g><g transform="translate(169.30380638244912, 220.07957624766448)" class="mindmap-node section-7"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-30"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">機器學習</tspan></tspan></text></g></g></g><g transform="translate(15, 378.6326770025074)" class="mindmap-node section-7"><g><rect width="136" height="47.8" class="node-bkg node-rect" id="node-31"></rect></g><g transform="translate(68, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">自然語言處理</tspan></tspan></text></g></g></g><g transform="translate(46.36336850825148, 306.1756964964469)" class="mindmap-node section-7"><g><rect width="120" height="47.8" class="node-bkg node-rect" id="node-32"></rect></g><g transform="translate(60, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">計算機視覺</tspan></tspan></text></g></g></g><g transform="translate(43.15899032895754, 233.56785762186436)" class="mindmap-node section-7"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-33"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">語音識別</tspan></tspan></text></g></g></g><g transform="translate(612.7468780764103, 286.4839087384222)" class="mindmap-node section-8"><g><rect width="120" height="47.8" class="node-bkg node-rect" id="node-34"></rect></g><g transform="translate(60, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">倫理與挑戰</tspan></tspan></text></g></g></g><g transform="translate(825.7011700715774, 348.5381738836992)" class="mindmap-node section-8"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-35"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">數據隱私</tspan></tspan></text></g></g></g><g transform="translate(643.6938561788164, 162.83886518243253)" class="mindmap-node section-8"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-36"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">算法偏見</tspan></tspan></text></g></g></g><g transform="translate(764.5500787212699, 287.5529626287447)" class="mindmap-node section-8"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-37"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">就業影響</tspan></tspan></text></g></g></g><g transform="translate(700.7101945111798, 362.69418153679464)" class="mindmap-node section-8"><g><rect width="104" height="47.8" class="node-bkg node-rect" id="node-38"></rect></g><g transform="translate(52, 10)" text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><g><rect class="background"></rect><text y="-10.1"><tspan dy="1.1em" y="-0.1em" x="0" class="text-outer-tspan"><tspan font-weight="normal" class="text-inner-tspan" font-style="normal">法律法規</tspan></tspan></text></g></g></g></g></svg></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div class="text-center p-8 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl">
+                    <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">9</div>
+                    <div class="text-lg font-semibold text-gray-900 dark:text-white mb-2">應用領域</div>
+                    <div class="text-gray-600 dark:text-gray-400">涵蓋社會生活各個層面</div>
+                </div>
+                <div class="text-center p-8 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-2xl">
+                    <div class="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">30+</div>
+                    <div class="text-lg font-semibold text-gray-900 dark:text-white mb-2">細分應用</div>
+                    <div class="text-gray-600 dark:text-gray-400">深度垂直場景應用</div>
+                </div>
+                <div class="text-center p-8 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl">
+                    <div class="text-4xl font-bold text-green-600 dark:text-green-400 mb-2">∞</div>
+                    <div class="text-lg font-semibold text-gray-900 dark:text-white mb-2">發展潛力</div>
+                    <div class="text-gray-600 dark:text-gray-400">持續創新與突破</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section id="applications" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">AI應用領域深度解析</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    探索AI技術在七大核心應用領域的具體實現與創新突破
+                </p>
+            </div>
+
+            <!-- Smart Finance -->
+            <div class="mb-20" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-coins text-blue-600 dark:text-blue-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-bold text-gray-900 dark:text-white">智慧金融</h3>
+                        </div>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                            金融業正通過AI技術實現前所未有的智能化轉型。目前已有61家金融業者導入生成式AI，占比達48%，年增21個百分點。
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-robot text-green-600 dark:text-green-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">智能投顧</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">個性化投資建議、風險評估</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-shield-alt text-red-600 dark:text-red-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">風控管理</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">反欺詐、信用評級</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-headset text-purple-600 dark:text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">客戶服務</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">智能客服、精準營銷</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="https://api.felo.ai/images/s/197ipyKQ5v" alt="智慧金融AI應用" class="w-full rounded-2xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smart Manufacturing -->
+            <div class="mb-20" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-industry text-orange-600 dark:text-orange-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-bold text-gray-900 dark:text-white">智慧製造</h3>
+                        </div>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                            工業4.0時代的智慧製造將物聯網、數位化工廠、雲端服務等技術緊密結合，創造虛實整合的製造產業。
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-cogs text-blue-600 dark:text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">智能生產</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">預測性維護、質量檢測</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-truck text-green-600 dark:text-green-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">供應鏈優化</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">需求預測、物流優化</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-robot text-yellow-600 dark:text-yellow-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">機器人協作</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">自動化裝配、人機協作</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="https://api.felo.ai/images/s/857UvBwX4q" alt="智慧製造工業4.0" class="w-full rounded-2xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smart Healthcare -->
+            <div class="mb-20" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-heartbeat text-red-600 dark:text-red-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-bold text-gray-900 dark:text-white">智慧醫療</h3>
+                        </div>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                            AI醫療診斷技術於2025年正式進入臨床應用，診斷準確率突破99%，重新定義現代醫療的未來發展。
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-search text-blue-600 dark:text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">輔助診斷</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">影像識別、疾病預測</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-pills text-green-600 dark:text-green-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">藥物研發</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">靶點發現、臨床試驗優化</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-user-md text-purple-600 dark:text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">健康管理</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">個性化治療、遠程監護</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="https://api.felo.ai/images/s/4NtA2XkHeK" alt="AI醫療診斷技術" class="w-full rounded-2xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smart Government -->
+            <div class="mb-20" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-city text-indigo-600 dark:text-indigo-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-bold text-gray-900 dark:text-white">智慧政府</h3>
+                        </div>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                            智慧城市建設透過AI技術提升政府治理效能，優化公共服務，實現數位轉型的公私協力合作模式。
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-traffic-light text-blue-600 dark:text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">城市管理</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">交通優化、環境監測</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-users text-green-600 dark:text-green-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">公共服務</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">智能政務、災害預警</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-balance-scale text-yellow-600 dark:text-yellow-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">社會治理</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">輿情分析、犯罪預防</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="https://api.felo.ai/images/s/6RtyXljBFo" alt="智慧城市政府管理" class="w-full rounded-2xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smart Education -->
+            <div class="mb-20" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-graduation-cap text-green-600 dark:text-green-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-bold text-gray-900 dark:text-white">智慧教育</h3>
+                        </div>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                            AI技術正在徹底改變教育4.0時代的學習模式，實現個性化學習和適性化教育的數位先進時代。
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-user-graduate text-blue-600 dark:text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">個性化學習</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">自適應學習、智能評估</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-chalkboard-teacher text-green-600 dark:text-green-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">教學輔助</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">智能批改、虛擬實驗室</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-chart-bar text-purple-600 dark:text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">教育管理</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">學生行為分析、資源分配優化</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="https://api.felo.ai/images/s/cobjzW9Tnu" alt="AI智慧教育應用" class="w-full rounded-2xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smart Transportation -->
+            <div class="mb-20" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900/30 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-car text-yellow-600 dark:text-yellow-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-bold text-gray-900 dark:text-white">智慧交通</h3>
+                        </div>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                            自動駕駛與智慧交通系統正在重塑未來出行方式，車聯網技術奠基駛向自駕安全新未來。
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-robot text-blue-600 dark:text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">自動駕駛</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">無人駕駛汽車、智能導航</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-eye text-green-600 dark:text-green-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">交通監控</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">實時路況、事故預警</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-shipping-fast text-purple-600 dark:text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">智能物流</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">路徑規劃、倉儲管理</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="https://api.felo.ai/images/s/fGts3nB4kg" alt="自動駕駛智慧交通" class="w-full rounded-2xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smart Life -->
+            <div style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-pink-100 dark:bg-pink-900/30 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-home text-pink-600 dark:text-pink-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-bold text-gray-900 dark:text-white">智慧生活</h3>
+                        </div>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                            智能家居和個人助理正在重新定義日常生活體驗，讓科技真正融入生活的每個角落。
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-lightbulb text-blue-600 dark:text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">智能家居</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">語音助手、智能家電</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-gamepad text-green-600 dark:text-green-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">娛樂休閒</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">內容推薦、虛擬現實</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-3 mt-1">
+                                    <i class="fas fa-calendar-alt text-purple-600 dark:text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white mb-1">個人助理</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">日程管理、健康監測</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="https://api.felo.ai/images/s/gQ0bPce3ux" alt="智慧家居生活體驗" class="w-full rounded-2xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">基礎技術架構</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    深入了解支撐AI應用的四大核心技術領域，探索技術創新的前沿突破
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-2xl text-center hover:shadow-lg transition-all duration-200 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-brain text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">機器學習</h3>
+                    <div class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-dot-circle text-blue-500 mr-2"></i>
+                            <span>深度學習</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-dot-circle text-blue-500 mr-2"></i>
+                            <span>強化學習</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-8 rounded-2xl text-center hover:shadow-lg transition-all duration-200 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-language text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">自然語言處理</h3>
+                    <div class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-dot-circle text-green-500 mr-2"></i>
+                            <span>語義理解</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-dot-circle text-green-500 mr-2"></i>
+                            <span>機器翻譯</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-8 rounded-2xl text-center hover:shadow-lg transition-all duration-200 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-eye text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">計算機視覺</h3>
+                    <div class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-dot-circle text-purple-500 mr-2"></i>
+                            <span>圖像識別</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-dot-circle text-purple-500 mr-2"></i>
+                            <span>人臉識別</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 p-8 rounded-2xl text-center hover:shadow-lg transition-all duration-200 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-microphone text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">語音識別</h3>
+                    <div class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-dot-circle text-orange-500 mr-2"></i>
+                            <span>語音轉文字</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-dot-circle text-orange-500 mr-2"></i>
+                            <span>聲紋識別</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 mb-16" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <h3 class="text-2xl font-bold text-center text-gray-900 dark:text-white mb-8">AI技術發展時間軸</h3>
+                <div class="mermaid" id="tech-timeline" data-processed="true"><svg aria-roledescription="timeline" role="graphics-document document" viewBox="0 -61 1190.7265625 630" style="max-width: 1190.7265625px;" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="100%" id="mermaid-1759997777448"><style>#mermaid-1759997777448{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-1759997777448 .error-icon{fill:#552222;}#mermaid-1759997777448 .error-text{fill:#552222;stroke:#552222;}#mermaid-1759997777448 .edge-thickness-normal{stroke-width:2px;}#mermaid-1759997777448 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1759997777448 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1759997777448 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1759997777448 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1759997777448 .marker{fill:#9ca3af;stroke:#9ca3af;}#mermaid-1759997777448 .marker.cross{stroke:#9ca3af;}#mermaid-1759997777448 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1759997777448 .edge{stroke-width:3;}#mermaid-1759997777448 .section--1 rect,#mermaid-1759997777448 .section--1 path,#mermaid-1759997777448 .section--1 circle,#mermaid-1759997777448 .section--1 path{fill:hsl(240, 100%, 76.2745098039%);}#mermaid-1759997777448 .section--1 text{fill:#ffffff;}#mermaid-1759997777448 .node-icon--1{font-size:40px;color:#ffffff;}#mermaid-1759997777448 .section-edge--1{stroke:hsl(240, 100%, 76.2745098039%);}#mermaid-1759997777448 .edge-depth--1{stroke-width:17;}#mermaid-1759997777448 .section--1 line{stroke:hsl(60, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777448 .lineWrapper line{stroke:#ffffff;}#mermaid-1759997777448 .disabled,#mermaid-1759997777448 .disabled circle,#mermaid-1759997777448 .disabled text{fill:lightgray;}#mermaid-1759997777448 .disabled text{fill:#efefef;}#mermaid-1759997777448 .section-0 rect,#mermaid-1759997777448 .section-0 path,#mermaid-1759997777448 .section-0 circle,#mermaid-1759997777448 .section-0 path{fill:hsl(60, 100%, 73.5294117647%);}#mermaid-1759997777448 .section-0 text{fill:black;}#mermaid-1759997777448 .node-icon-0{font-size:40px;color:black;}#mermaid-1759997777448 .section-edge-0{stroke:hsl(60, 100%, 73.5294117647%);}#mermaid-1759997777448 .edge-depth-0{stroke-width:14;}#mermaid-1759997777448 .section-0 line{stroke:hsl(240, 100%, 83.5294117647%);stroke-width:3;}#mermaid-1759997777448 .lineWrapper line{stroke:black;}#mermaid-1759997777448 .disabled,#mermaid-1759997777448 .disabled circle,#mermaid-1759997777448 .disabled text{fill:lightgray;}#mermaid-1759997777448 .disabled text{fill:#efefef;}#mermaid-1759997777448 .section-1 rect,#mermaid-1759997777448 .section-1 path,#mermaid-1759997777448 .section-1 circle,#mermaid-1759997777448 .section-1 path{fill:hsl(80, 100%, 76.2745098039%);}#mermaid-1759997777448 .section-1 text{fill:black;}#mermaid-1759997777448 .node-icon-1{font-size:40px;color:black;}#mermaid-1759997777448 .section-edge-1{stroke:hsl(80, 100%, 76.2745098039%);}#mermaid-1759997777448 .edge-depth-1{stroke-width:11;}#mermaid-1759997777448 .section-1 line{stroke:hsl(260, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777448 .lineWrapper line{stroke:black;}#mermaid-1759997777448 .disabled,#mermaid-1759997777448 .disabled circle,#mermaid-1759997777448 .disabled text{fill:lightgray;}#mermaid-1759997777448 .disabled text{fill:#efefef;}#mermaid-1759997777448 .section-2 rect,#mermaid-1759997777448 .section-2 path,#mermaid-1759997777448 .section-2 circle,#mermaid-1759997777448 .section-2 path{fill:hsl(270, 100%, 76.2745098039%);}#mermaid-1759997777448 .section-2 text{fill:#ffffff;}#mermaid-1759997777448 .node-icon-2{font-size:40px;color:#ffffff;}#mermaid-1759997777448 .section-edge-2{stroke:hsl(270, 100%, 76.2745098039%);}#mermaid-1759997777448 .edge-depth-2{stroke-width:8;}#mermaid-1759997777448 .section-2 line{stroke:hsl(90, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777448 .lineWrapper line{stroke:#ffffff;}#mermaid-1759997777448 .disabled,#mermaid-1759997777448 .disabled circle,#mermaid-1759997777448 .disabled text{fill:lightgray;}#mermaid-1759997777448 .disabled text{fill:#efefef;}#mermaid-1759997777448 .section-3 rect,#mermaid-1759997777448 .section-3 path,#mermaid-1759997777448 .section-3 circle,#mermaid-1759997777448 .section-3 path{fill:hsl(300, 100%, 76.2745098039%);}#mermaid-1759997777448 .section-3 text{fill:black;}#mermaid-1759997777448 .node-icon-3{font-size:40px;color:black;}#mermaid-1759997777448 .section-edge-3{stroke:hsl(300, 100%, 76.2745098039%);}#mermaid-1759997777448 .edge-depth-3{stroke-width:5;}#mermaid-1759997777448 .section-3 line{stroke:hsl(120, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777448 .lineWrapper line{stroke:black;}#mermaid-1759997777448 .disabled,#mermaid-1759997777448 .disabled circle,#mermaid-1759997777448 .disabled text{fill:lightgray;}#mermaid-1759997777448 .disabled text{fill:#efefef;}#mermaid-1759997777448 .section-4 rect,#mermaid-1759997777448 .section-4 path,#mermaid-1759997777448 .section-4 circle,#mermaid-1759997777448 .section-4 path{fill:hsl(330, 100%, 76.2745098039%);}#mermaid-1759997777448 .section-4 text{fill:black;}#mermaid-1759997777448 .node-icon-4{font-size:40px;color:black;}#mermaid-1759997777448 .section-edge-4{stroke:hsl(330, 100%, 76.2745098039%);}#mermaid-1759997777448 .edge-depth-4{stroke-width:2;}#mermaid-1759997777448 .section-4 line{stroke:hsl(150, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777448 .lineWrapper line{stroke:black;}#mermaid-1759997777448 .disabled,#mermaid-1759997777448 .disabled circle,#mermaid-1759997777448 .disabled text{fill:lightgray;}#mermaid-1759997777448 .disabled text{fill:#efefef;}#mermaid-1759997777448 .section-5 rect,#mermaid-1759997777448 .section-5 path,#mermaid-1759997777448 .section-5 circle,#mermaid-1759997777448 .section-5 path{fill:hsl(0, 100%, 76.2745098039%);}#mermaid-1759997777448 .section-5 text{fill:black;}#mermaid-1759997777448 .node-icon-5{font-size:40px;color:black;}#mermaid-1759997777448 .section-edge-5{stroke:hsl(0, 100%, 76.2745098039%);}#mermaid-1759997777448 .edge-depth-5{stroke-width:-1;}#mermaid-1759997777448 .section-5 line{stroke:hsl(180, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777448 .lineWrapper line{stroke:black;}#mermaid-1759997777448 .disabled,#mermaid-1759997777448 .disabled circle,#mermaid-1759997777448 .disabled text{fill:lightgray;}#mermaid-1759997777448 .disabled text{fill:#efefef;}#mermaid-1759997777448 .section-6 rect,#mermaid-1759997777448 .section-6 path,#mermaid-1759997777448 .section-6 circle,#mermaid-1759997777448 .section-6 path{fill:hsl(30, 100%, 76.2745098039%);}#mermaid-1759997777448 .section-6 text{fill:black;}#mermaid-1759997777448 .node-icon-6{font-size:40px;color:black;}#mermaid-1759997777448 .section-edge-6{stroke:hsl(30, 100%, 76.2745098039%);}#mermaid-1759997777448 .edge-depth-6{stroke-width:-4;}#mermaid-1759997777448 .section-6 line{stroke:hsl(210, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777448 .lineWrapper line{stroke:black;}#mermaid-1759997777448 .disabled,#mermaid-1759997777448 .disabled circle,#mermaid-1759997777448 .disabled text{fill:lightgray;}#mermaid-1759997777448 .disabled text{fill:#efefef;}#mermaid-1759997777448 .section-7 rect,#mermaid-1759997777448 .section-7 path,#mermaid-1759997777448 .section-7 circle,#mermaid-1759997777448 .section-7 path{fill:hsl(90, 100%, 76.2745098039%);}#mermaid-1759997777448 .section-7 text{fill:black;}#mermaid-1759997777448 .node-icon-7{font-size:40px;color:black;}#mermaid-1759997777448 .section-edge-7{stroke:hsl(90, 100%, 76.2745098039%);}#mermaid-1759997777448 .edge-depth-7{stroke-width:-7;}#mermaid-1759997777448 .section-7 line{stroke:hsl(270, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777448 .lineWrapper line{stroke:black;}#mermaid-1759997777448 .disabled,#mermaid-1759997777448 .disabled circle,#mermaid-1759997777448 .disabled text{fill:lightgray;}#mermaid-1759997777448 .disabled text{fill:#efefef;}#mermaid-1759997777448 .section-8 rect,#mermaid-1759997777448 .section-8 path,#mermaid-1759997777448 .section-8 circle,#mermaid-1759997777448 .section-8 path{fill:hsl(150, 100%, 76.2745098039%);}#mermaid-1759997777448 .section-8 text{fill:black;}#mermaid-1759997777448 .node-icon-8{font-size:40px;color:black;}#mermaid-1759997777448 .section-edge-8{stroke:hsl(150, 100%, 76.2745098039%);}#mermaid-1759997777448 .edge-depth-8{stroke-width:-10;}#mermaid-1759997777448 .section-8 line{stroke:hsl(330, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777448 .lineWrapper line{stroke:black;}#mermaid-1759997777448 .disabled,#mermaid-1759997777448 .disabled circle,#mermaid-1759997777448 .disabled text{fill:lightgray;}#mermaid-1759997777448 .disabled text{fill:#efefef;}#mermaid-1759997777448 .section-9 rect,#mermaid-1759997777448 .section-9 path,#mermaid-1759997777448 .section-9 circle,#mermaid-1759997777448 .section-9 path{fill:hsl(180, 100%, 76.2745098039%);}#mermaid-1759997777448 .section-9 text{fill:black;}#mermaid-1759997777448 .node-icon-9{font-size:40px;color:black;}#mermaid-1759997777448 .section-edge-9{stroke:hsl(180, 100%, 76.2745098039%);}#mermaid-1759997777448 .edge-depth-9{stroke-width:-13;}#mermaid-1759997777448 .section-9 line{stroke:hsl(0, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777448 .lineWrapper line{stroke:black;}#mermaid-1759997777448 .disabled,#mermaid-1759997777448 .disabled circle,#mermaid-1759997777448 .disabled text{fill:lightgray;}#mermaid-1759997777448 .disabled text{fill:#efefef;}#mermaid-1759997777448 .section-10 rect,#mermaid-1759997777448 .section-10 path,#mermaid-1759997777448 .section-10 circle,#mermaid-1759997777448 .section-10 path{fill:hsl(210, 100%, 76.2745098039%);}#mermaid-1759997777448 .section-10 text{fill:black;}#mermaid-1759997777448 .node-icon-10{font-size:40px;color:black;}#mermaid-1759997777448 .section-edge-10{stroke:hsl(210, 100%, 76.2745098039%);}#mermaid-1759997777448 .edge-depth-10{stroke-width:-16;}#mermaid-1759997777448 .section-10 line{stroke:hsl(30, 100%, 86.2745098039%);stroke-width:3;}#mermaid-1759997777448 .lineWrapper line{stroke:black;}#mermaid-1759997777448 .disabled,#mermaid-1759997777448 .disabled circle,#mermaid-1759997777448 .disabled text{fill:lightgray;}#mermaid-1759997777448 .disabled text{fill:#efefef;}#mermaid-1759997777448 .section-root rect,#mermaid-1759997777448 .section-root path,#mermaid-1759997777448 .section-root circle{fill:hsl(240, 100%, 46.2745098039%);}#mermaid-1759997777448 .section-root text{fill:#ffffff;}#mermaid-1759997777448 .icon-container{height:100%;display:flex;justify-content:center;align-items:center;}#mermaid-1759997777448 .edge{fill:none;}#mermaid-1759997777448 .eventWrapper{filter:brightness(120%);}#mermaid-1759997777448 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g></g><g></g><defs><marker orient="auto" markerHeight="4" markerWidth="6" refY="2" refX="5" id="arrowhead"><path d="M 0,0 V 4 L6,2 Z"></path></marker></defs><g transform="translate(100, 50)"><g class="timeline-node section--1"><g><path d="M0 62.8 v-57.8 q0,-5 5,-5 h180 q5,0 5,5 v62.8 H0 Z" class="node-bkg node-undefined" id="node-undefined"></path><line y2="67.8" x2="190" y1="67.8" x1="0" class="node-line--1"></line></g><g transform="translate(95, 10)"><text text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><tspan dy="1em" x="0">2024年</tspan></text></g></g></g><g transform="translate(100, 167.8)" class="taskWrapper"><g class="timeline-node section--1"><g><path d="M0 62.8 v-57.8 q0,-5 5,-5 h180 q5,0 5,5 v62.8 H0 Z" class="node-bkg node-undefined" id="node-undefined"></path><line y2="67.8" x2="190" y1="67.8" x1="0" class="node-line--1"></line></g><g transform="translate(95, 10)"><text text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><tspan dy="1em" x="0">AI產業突破</tspan></text></g></g></g><g class="lineWrapper"><line stroke-dasharray="5,5" marker-end="url(#arrowhead)" stroke="black" stroke-width="2" y2="519" x2="195" y1="235.60000000000002" x1="195"></line></g><g transform="translate(100, 367.8)" class="eventWrapper"><g class="timeline-node section--1"><g><path d="M0 45 v-40 q0,-5 5,-5 h180 q5,0 5,5 v45 H0 Z" class="node-bkg node-undefined" id="node-undefined"></path><line y2="50" x2="190" y1="50" x1="0" class="node-line--1"></line></g><g transform="translate(95, 10)"><text text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><tspan dy="1em" x="0"></tspan><tspan dy="1.1em" x="0">全球AI投資突破1000億美元</tspan></text></g></g></g><g transform="translate(100, 427.8)" class="eventWrapper"><g class="timeline-node section--1"><g><path d="M0 45 v-40 q0,-5 5,-5 h180 q5,0 5,5 v45 H0 Z" class="node-bkg node-undefined" id="node-undefined"></path><line y2="50" x2="190" y1="50" x1="0" class="node-line--1"></line></g><g transform="translate(95, 10)"><text text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><tspan dy="1em" x="0">生成式AI蓬勃發展</tspan></text></g></g></g><g transform="translate(300, 50)"><g class="timeline-node section-0"><g><path d="M0 62.8 v-57.8 q0,-5 5,-5 h180 q5,0 5,5 v62.8 H0 Z" class="node-bkg node-undefined" id="node-undefined"></path><line y2="67.8" x2="190" y1="67.8" x1="0" class="node-line-0"></line></g><g transform="translate(95, 10)"><text text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><tspan dy="1em" x="0">2025年</tspan></text></g></g></g><g transform="translate(300, 167.8)" class="taskWrapper"><g class="timeline-node section-0"><g><path d="M0 62.8 v-57.8 q0,-5 5,-5 h180 q5,0 5,5 v62.8 H0 Z" class="node-bkg node-undefined" id="node-undefined"></path><line y2="67.8" x2="190" y1="67.8" x1="0" class="node-line-0"></line></g><g transform="translate(95, 10)"><text text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><tspan dy="1em" x="0">醫療突破</tspan></text></g></g></g><g class="lineWrapper"><line stroke-dasharray="5,5" marker-end="url(#arrowhead)" stroke="black" stroke-width="2" y2="519" x2="395" y1="235.60000000000002" x1="395"></line></g><g transform="translate(300, 367.8)" class="eventWrapper"><g class="timeline-node section-0"><g><path d="M0 45 v-40 q0,-5 5,-5 h180 q5,0 5,5 v45 H0 Z" class="node-bkg node-undefined" id="node-undefined"></path><line y2="50" x2="190" y1="50" x1="0" class="node-line-0"></line></g><g transform="translate(95, 10)"><text text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><tspan dy="1em" x="0">AI診斷準確率達99%</tspan></text></g></g></g><g transform="translate(300, 427.8)" class="eventWrapper"><g class="timeline-node section-0"><g><path d="M0 45 v-40 q0,-5 5,-5 h180 q5,0 5,5 v45 H0 Z" class="node-bkg node-undefined" id="node-undefined"></path><line y2="50" x2="190" y1="50" x1="0" class="node-line-0"></line></g><g transform="translate(95, 10)"><text text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><tspan dy="1em" x="0">正式進入臨床應用</tspan></text></g></g></g><g transform="translate(500, 50)"><g class="timeline-node section-1"><g><path d="M0 62.8 v-57.8 q0,-5 5,-5 h580 q5,0 5,5 v62.8 H0 Z" class="node-bkg node-undefined" id="node-undefined"></path><line y2="67.8" x2="590" y1="67.8" x1="0" class="node-line-1"></line></g><g transform="translate(295, 10)"><text text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><tspan dy="1em" x="0">未來發展</tspan></text></g></g></g><g transform="translate(500, 167.8)" class="taskWrapper"><g class="timeline-node section-1"><g><path d="M0 62.8 v-57.8 q0,-5 5,-5 h180 q5,0 5,5 v62.8 H0 Z" class="node-bkg node-undefined" id="node-undefined"></path><line y2="67.8" x2="190" y1="67.8" x1="0" class="node-line-1"></line></g><g transform="translate(95, 10)"><text text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><tspan dy="1em" x="0">分散式AI</tspan></text></g></g></g><g class="lineWrapper"><line stroke-dasharray="5,5" marker-end="url(#arrowhead)" stroke="black" stroke-width="2" y2="519" x2="595" y1="235.60000000000002" x1="595"></line></g><g transform="translate(500, 367.8)" class="eventWrapper"><g class="timeline-node section-1"><g><path d="M0 45 v-40 q0,-5 5,-5 h180 q5,0 5,5 v45 H0 Z" class="node-bkg node-undefined" id="node-undefined"></path><line y2="50" x2="190" y1="50" x1="0" class="node-line-1"></line></g><g transform="translate(95, 10)"><text text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><tspan dy="1em" x="0">邊緣計算普及</tspan></text></g></g></g><g transform="translate(700, 167.8)" class="taskWrapper"><g class="timeline-node section-1"><g><path d="M0 62.8 v-57.8 q0,-5 5,-5 h180 q5,0 5,5 v62.8 H0 Z" class="node-bkg node-undefined" id="node-undefined"></path><line y2="67.8" x2="190" y1="67.8" x1="0" class="node-line-1"></line></g><g transform="translate(95, 10)"><text text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><tspan dy="1em" x="0">可信任AI</tspan></text></g></g></g><g class="lineWrapper"><line stroke-dasharray="5,5" marker-end="url(#arrowhead)" stroke="black" stroke-width="2" y2="519" x2="795" y1="235.60000000000002" x1="795"></line></g><g transform="translate(700, 367.8)" class="eventWrapper"><g class="timeline-node section-1"><g><path d="M0 45 v-40 q0,-5 5,-5 h180 q5,0 5,5 v45 H0 Z" class="node-bkg node-undefined" id="node-undefined"></path><line y2="50" x2="190" y1="50" x1="0" class="node-line-1"></line></g><g transform="translate(95, 10)"><text text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><tspan dy="1em" x="0">倫理框架建立</tspan></text></g></g></g><g transform="translate(900, 167.8)" class="taskWrapper"><g class="timeline-node section-1"><g><path d="M0 62.8 v-57.8 q0,-5 5,-5 h180 q5,0 5,5 v62.8 H0 Z" class="node-bkg node-undefined" id="node-undefined"></path><line y2="67.8" x2="190" y1="67.8" x1="0" class="node-line-1"></line></g><g transform="translate(95, 10)"><text text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><tspan dy="1em" x="0">永續AI</tspan></text></g></g></g><g class="lineWrapper"><line stroke-dasharray="5,5" marker-end="url(#arrowhead)" stroke="black" stroke-width="2" y2="519" x2="995" y1="235.60000000000002" x1="995"></line></g><g transform="translate(900, 367.8)" class="eventWrapper"><g class="timeline-node section-1"><g><path d="M0 45 v-40 q0,-5 5,-5 h180 q5,0 5,5 v45 H0 Z" class="node-bkg node-undefined" id="node-undefined"></path><line y2="50" x2="190" y1="50" x1="0" class="node-line-1"></line></g><g transform="translate(95, 10)"><text text-anchor="middle" dominant-baseline="middle" alignment-baseline="middle" dy="1em"><tspan dy="1em" x="0">綠色計算技術</tspan></text></g></g></g><text y="20" font-weight="bold" font-size="4ex" x="445.36328125">AI技術發展歷程</text><g class="lineWrapper"><line marker-end="url(#arrowhead)" stroke="black" stroke-width="4" y2="285.6" x2="1140.7265625" y1="285.6" x1="50"></line></g></svg></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">2024年技術突破</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+                            <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-rocket text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">生成式AI躍進</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">OpenAI、Google、Meta展開激烈競逐</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-4 bg-green-50 dark:bg-green-900/20 rounded-xl">
+                            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-chart-line text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">多模態AI發展</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">文字、圖像、音頻整合應用</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl">
+                            <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-microchip text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">晶片算力突破</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">AI專用處理器性能大幅提升</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">未來發展趨勢</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-xl">
+                            <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-network-wired text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">分散式AI</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">邊緣計算與雲端協同發展</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-4 bg-red-50 dark:bg-red-900/20 rounded-xl">
+                            <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-shield text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">可信任AI</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">透明度與安全性並重</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-4 bg-teal-50 dark:bg-teal-900/20 rounded-xl">
+                            <div class="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-leaf text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">永續AI</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">綠色計算技術發展</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ethics Section -->
+    <section id="ethics" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">倫理與挑戰</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    在AI技術快速發展的同時，我們必須正視並解決伴隨而來的倫理問題與社會挑戰
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200">
+                    <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-lock text-red-600 dark:text-red-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">數據隱私</h3>
+                    <div class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <div>• 數據安全</div>
+                        <div>• 隱私保護</div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200">
+                    <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-balance-scale text-orange-600 dark:text-orange-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">算法偏見</h3>
+                    <div class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <div>• 公平性</div>
+                        <div>• 透明度</div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200">
+                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-blue-600 dark:text-blue-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">就業影響</h3>
+                    <div class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <div>• 崗位替代</div>
+                        <div>• 技能轉型</div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200">
+                    <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-gavel text-green-600 dark:text-green-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">法律法規</h3>
+                    <div class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <div>• 責任歸屬</div>
+                        <div>• 監管框架</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-900 rounded-3xl p-8 mb-16" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <h3 class="text-2xl font-bold text-center text-gray-900 dark:text-white mb-8">AI倫理挑戰架構</h3>
+                <div class="mermaid" id="ethics-diagram" data-processed="true"><svg aria-roledescription="flowchart-v2" role="graphics-document document" viewBox="-8 -8 1159 233" style="max-width: 1159px;" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="100%" id="mermaid-1759997777491"><style>#mermaid-1759997777491{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-1759997777491 .error-icon{fill:#552222;}#mermaid-1759997777491 .error-text{fill:#552222;stroke:#552222;}#mermaid-1759997777491 .edge-thickness-normal{stroke-width:2px;}#mermaid-1759997777491 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1759997777491 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1759997777491 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1759997777491 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1759997777491 .marker{fill:#9ca3af;stroke:#9ca3af;}#mermaid-1759997777491 .marker.cross{stroke:#9ca3af;}#mermaid-1759997777491 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1759997777491 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaid-1759997777491 .cluster-label text{fill:#333;}#mermaid-1759997777491 .cluster-label span,#mermaid-1759997777491 p{color:#333;}#mermaid-1759997777491 .label text,#mermaid-1759997777491 span,#mermaid-1759997777491 p{fill:#333;color:#333;}#mermaid-1759997777491 .node rect,#mermaid-1759997777491 .node circle,#mermaid-1759997777491 .node ellipse,#mermaid-1759997777491 .node polygon,#mermaid-1759997777491 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-1759997777491 .flowchart-label text{text-anchor:middle;}#mermaid-1759997777491 .node .label{text-align:center;}#mermaid-1759997777491 .node.clickable{cursor:pointer;}#mermaid-1759997777491 .arrowheadPath{fill:#333333;}#mermaid-1759997777491 .edgePath .path{stroke:#9ca3af;stroke-width:2.0px;}#mermaid-1759997777491 .flowchart-link{stroke:#9ca3af;fill:none;}#mermaid-1759997777491 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaid-1759997777491 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaid-1759997777491 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mermaid-1759997777491 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-1759997777491 .cluster text{fill:#333;}#mermaid-1759997777491 .cluster span,#mermaid-1759997777491 p{color:#333;}#mermaid-1759997777491 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:#f3f4f6;border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1759997777491 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-1759997777491 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="6" viewBox="0 0 10 10" class="marker flowchart" id="mermaid-1759997777491_flowchart-pointEnd"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 0 L 10 5 L 0 10 z"></path></marker><marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="4.5" viewBox="0 0 10 10" class="marker flowchart" id="mermaid-1759997777491_flowchart-pointStart"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 5 L 10 10 L 10 0 z"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="11" viewBox="0 0 10 10" class="marker flowchart" id="mermaid-1759997777491_flowchart-circleEnd"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="-1" viewBox="0 0 10 10" class="marker flowchart" id="mermaid-1759997777491_flowchart-circleStart"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="12" viewBox="0 0 11 11" class="marker cross flowchart" id="mermaid-1759997777491_flowchart-crossEnd"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="-1" viewBox="0 0 11 11" class="marker cross flowchart" id="mermaid-1759997777491_flowchart-crossStart"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path marker-end="url(#mermaid-1759997777491_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-B" id="L-A-B-0" d="M541.055,24.629L481.629,31.19C422.203,37.752,303.352,50.876,243.926,60.721C184.5,70.567,184.5,77.133,184.5,80.417L184.5,83.7"></path><path marker-end="url(#mermaid-1759997777491_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-C" id="L-A-C-0" d="M587.5,39L587.5,43.167C587.5,47.333,587.5,55.667,587.5,63.117C587.5,70.567,587.5,77.133,587.5,80.417L587.5,83.7"></path><path marker-end="url(#mermaid-1759997777491_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-D" id="L-A-D-0" d="M633.945,24.841L690.704,31.367C747.464,37.894,860.982,50.947,917.741,60.757C974.5,70.567,974.5,77.133,974.5,80.417L974.5,83.7"></path><path marker-end="url(#mermaid-1759997777491_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-B LE-B1" id="L-B-B1-0" d="M145,121.33L128.75,126.609C112.5,131.887,80,142.443,63.75,151.005C47.5,159.567,47.5,166.133,47.5,169.417L47.5,172.7"></path><path marker-end="url(#mermaid-1759997777491_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-B LE-B2" id="L-B-B2-0" d="M184.5,128L184.5,132.167C184.5,136.333,184.5,144.667,184.5,152.117C184.5,159.567,184.5,166.133,184.5,169.417L184.5,172.7"></path><path marker-end="url(#mermaid-1759997777491_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-B LE-B3" id="L-B-B3-0" d="M224,121.33L240.25,126.609C256.5,131.887,289,142.443,305.25,151.005C321.5,159.567,321.5,166.133,321.5,169.417L321.5,172.7"></path><path marker-end="url(#mermaid-1759997777491_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-C1" id="L-C-C1-0" d="M548,122.126L533.083,127.272C518.167,132.417,488.333,142.709,473.417,151.138C458.5,159.567,458.5,166.133,458.5,169.417L458.5,172.7"></path><path marker-end="url(#mermaid-1759997777491_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-C2" id="L-C-C2-0" d="M587.5,128L587.5,132.167C587.5,136.333,587.5,144.667,587.5,152.117C587.5,159.567,587.5,166.133,587.5,169.417L587.5,172.7"></path><path marker-end="url(#mermaid-1759997777491_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-C3" id="L-C-C3-0" d="M627,122.126L641.917,127.272C656.833,132.417,686.667,142.709,701.583,151.138C716.5,159.567,716.5,166.133,716.5,169.417L716.5,172.7"></path><path marker-end="url(#mermaid-1759997777491_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-D LE-D1" id="L-D-D1-0" d="M935,122.126L920.083,127.272C905.167,132.417,875.333,142.709,860.417,151.138C845.5,159.567,845.5,166.133,845.5,169.417L845.5,172.7"></path><path marker-end="url(#mermaid-1759997777491_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-D LE-D2" id="L-D-D2-0" d="M974.5,128L974.5,132.167C974.5,136.333,974.5,144.667,974.5,152.117C974.5,159.567,974.5,166.133,974.5,169.417L974.5,172.7"></path><path marker-end="url(#mermaid-1759997777491_flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-D LE-D3" id="L-D-D3-0" d="M1014,122.126L1028.917,127.272C1043.833,132.417,1073.667,142.709,1088.583,151.138C1103.5,159.567,1103.5,166.133,1103.5,169.417L1103.5,172.7"></path></g><g class="edgeLabels"><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g transform="translate(587.5, 19.5)" id="flowchart-A-0" class="node default default flowchart-label"><rect height="39" width="92.890625" y="-19.5" x="-46.4453125" ry="0" rx="0" style="fill:#e1f5fe;" class="basic label-container"></rect><g transform="translate(-38.9453125, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="77.890625"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">AI倫理挑戰</span></div></foreignObject></g></g><g transform="translate(184.5, 108.5)" id="flowchart-B-1" class="node default default flowchart-label"><rect height="39" width="79" y="-19.5" x="-39.5" ry="0" rx="0" style="fill:#f3e5f5;" class="basic label-container"></rect><g transform="translate(-32, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="64"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">技術層面</span></div></foreignObject></g></g><g transform="translate(587.5, 108.5)" id="flowchart-C-3" class="node default default flowchart-label"><rect height="39" width="79" y="-19.5" x="-39.5" ry="0" rx="0" style="fill:#e8f5e8;" class="basic label-container"></rect><g transform="translate(-32, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="64"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">社會層面</span></div></foreignObject></g></g><g transform="translate(974.5, 108.5)" id="flowchart-D-5" class="node default default flowchart-label"><rect height="39" width="79" y="-19.5" x="-39.5" ry="0" rx="0" style="fill:#fff3e0;" class="basic label-container"></rect><g transform="translate(-32, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="64"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">法律層面</span></div></foreignObject></g></g><g transform="translate(47.5, 197.5)" id="flowchart-B1-7" class="node default default flowchart-label"><rect height="39" width="95" y="-19.5" x="-47.5" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-40, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="80"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">算法透明度</span></div></foreignObject></g></g><g transform="translate(184.5, 197.5)" id="flowchart-B2-9" class="node default default flowchart-label"><rect height="39" width="79" y="-19.5" x="-39.5" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-32, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="64"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">數據品質</span></div></foreignObject></g></g><g transform="translate(321.5, 197.5)" id="flowchart-B3-11" class="node default default flowchart-label"><rect height="39" width="95" y="-19.5" x="-47.5" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-40, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="80"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">系統安全性</span></div></foreignObject></g></g><g transform="translate(458.5, 197.5)" id="flowchart-C1-13" class="node default default flowchart-label"><rect height="39" width="79" y="-19.5" x="-39.5" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-32, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="64"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">就業衝擊</span></div></foreignObject></g></g><g transform="translate(587.5, 197.5)" id="flowchart-C2-15" class="node default default flowchart-label"><rect height="39" width="79" y="-19.5" x="-39.5" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-32, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="64"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">社會公平</span></div></foreignObject></g></g><g transform="translate(716.5, 197.5)" id="flowchart-C3-17" class="node default default flowchart-label"><rect height="39" width="79" y="-19.5" x="-39.5" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-32, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="64"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">文化價值</span></div></foreignObject></g></g><g transform="translate(845.5, 197.5)" id="flowchart-D1-19" class="node default default flowchart-label"><rect height="39" width="79" y="-19.5" x="-39.5" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-32, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="64"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">責任界定</span></div></foreignObject></g></g><g transform="translate(974.5, 197.5)" id="flowchart-D2-21" class="node default default flowchart-label"><rect height="39" width="79" y="-19.5" x="-39.5" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-32, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="64"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">監管政策</span></div></foreignObject></g></g><g transform="translate(1103.5, 197.5)" id="flowchart-D3-23" class="node default default flowchart-label"><rect height="39" width="79" y="-19.5" x="-39.5" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-32, -12)" style="" class="label"><rect></rect><foreignObject height="24" width="64"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">國際合作</span></div></foreignObject></g></g></g></g></g></svg></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                        <i class="fas fa-exclamation-triangle text-yellow-500 mr-3"></i>
+                        關鍵挑戰
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white mb-2">AI偏見問題</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                算法可能反映訓練數據中的偏見，導致不公平的決策結果，特別是在招聘、信貸和司法領域
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white mb-2">隱私侵犯風險</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                大數據收集和分析可能侵犯個人隱私，需要在技術進步和隱私保護之間找到平衡
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white mb-2">職業替代威脅</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                自動化可能導致大量職位消失，需要重新思考教育和職業培訓體系
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                        <i class="fas fa-lightbulb text-green-500 mr-3"></i>
+                        解決方案
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white mb-2">建立倫理框架</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                制定AI開發和應用的倫理準則，確保技術發展符合人類價值觀和社會利益
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white mb-2">加強監管機制</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                建立完善的法律法規體系，規範AI技術的開發、部署和使用
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white mb-2">推動教育轉型</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                重新設計教育課程，培養適應AI時代的新技能，幫助人們適應職業變化
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-4">AI智慧未來</h3>
+                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                    探索人工智慧技術的無限可能，與時俱進，共創智慧未來
+                </p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 張宇豐. 版權所有 | 基於AI人工智慧技術心智圖設計
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Check for saved theme or default to system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        const currentTheme = savedTheme || systemTheme;
+
+        html.classList.toggle('dark', currentTheme === 'dark');
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = html.classList.contains('dark');
+            html.classList.toggle('dark', !isDark);
+            localStorage.setItem('theme', !isDark ? 'dark' : 'light');
+            
+            // Reinitialize charts with new theme
+            initializeCharts();
+        });
+
+        // Initialize Mermaid
+        function initializeMermaid() {
+            const isDark = html.classList.contains('dark');
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: isDark ? 'dark' : 'default',
+                themeVariables: {
+                    primaryColor: isDark ? '#3b82f6' : '#2563eb',
+                    primaryTextColor: isDark ? '#f3f4f6' : '#1f2937',
+                    primaryBorderColor: isDark ? '#374151' : '#d1d5db',
+                    lineColor: isDark ? '#6b7280' : '#9ca3af',
+                    secondaryColor: isDark ? '#1f2937' : '#f9fafb',
+                    tertiaryColor: isDark ? '#374151' : '#f3f4f6'
+                }
+            });
+        }
+
+        // Initialize all charts
+        function initializeCharts() {
+            initializeMermaid();
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCharts();
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('section > div > div').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+
+<div class="mermaidTooltip" style="opacity: 0;"></div></body></html>

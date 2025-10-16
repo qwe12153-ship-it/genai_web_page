@@ -1,235 +1,135 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>一路相伴 - 藍調音樂</title>
-    <!-- 載入 Tailwind CSS -->
+    <title>一路相伴 - 藍調音樂播放器</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 載入 Inter 字體 -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* 設定主要字體為 Inter 和思源黑體 (確保中文字體顯示) */
         body {
-            font-family: 'Inter', 'Noto Sans TC', sans-serif;
-            background-color: #f7f7f7;
-            color: #333;
+            font-family: 'Noto Sans TC', 'Inter', sans-serif;
+            background-color: #f7f3f0; /* 溫暖的淺米色背景 */
         }
-
-        /* 歌詞區域的自訂滾動條樣式 (適用於 Chrome/Safari) */
-        .lyrics-container::-webkit-scrollbar {
+        /* 自定義捲軸樣式 */
+        .custom-scrollbar::-webkit-scrollbar {
             width: 8px;
         }
-        .lyrics-container::-webkit-scrollbar-thumb {
-            background-color: #a0aec0; /* Tailwind gray-400 */
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #a8a29e; /* 柔和的灰色 */
             border-radius: 4px;
         }
-        .lyrics-container::-webkit-scrollbar-track {
-            background: #edf2f7; /* Tailwind gray-100 */
-        }
-        /* 歌詞高亮效果 */
-        .highlighted {
-            color: #2b6cb0; /* Tailwind blue-700 */
-            font-weight: 700;
-            transform: scale(1.02);
-            transition: all 0.3s ease-in-out;
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #e7e5e4; /* 淺灰色軌道 */
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center p-4">
+<body class="min-h-screen p-4 sm:p-8">
+    <div class="max-w-6xl mx-auto bg-white shadow-2xl rounded-3xl p-6 md:p-10 border-4 border-gray-100">
 
-    <!-- 主容器 -->
-    <div class="bg-white shadow-2xl rounded-xl p-8 max-w-lg w-full transform transition-all duration-500 hover:shadow-3xl">
+        <!-- 標題 -->
+        <h1 class="text-4xl font-bold text-gray-800 mb-6 border-b-2 pb-2 border-amber-500">
+            音樂賞析：一路相伴
+        </h1>
 
-        <!-- 歌曲資訊 -->
-        <header class="text-center mb-6">
-            <h1 class="text-4xl font-extrabold text-gray-800 tracking-tight mb-1">一路相伴</h1>
-            <p class="text-lg text-blue-600 font-semibold">Blues Music 藍調音樂</p>
-            <p class="text-sm text-gray-500">（時長約 2 分鐘）</p>
-        </header>
+        <!-- 主要內容區塊：在桌面顯示為兩欄，手機上堆疊 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-        <!-- 播放器控制 -->
-        <audio id="audioPlayer" controls class="w-full mb-6 rounded-lg shadow-inner"></audio>
+            <!-- 左側：播放器和歌曲資訊 (佔 1/3 寬度) -->
+            <div class="md:col-span-1 p-6 bg-amber-50 rounded-2xl shadow-lg h-fit">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-amber-700 mb-2">歌曲資訊</h2>
+                    <p class="text-lg text-gray-700 mb-1">
+                        <span class="font-semibold text-gray-900">歌名：</span>一路相伴
+                    </p>
+                    <p class="text-lg text-gray-700 mb-1">
+                        <span class="font-semibold text-gray-900">曲風：</span>藍調 (Blues Music)
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4">
+                        <span class="font-semibold text-gray-900">時長：</span>約 2 分鐘
+                    </p>
+                </div>
 
-        <!-- 歌詞顯示區 -->
-        <div id="lyricsContainer" class="lyrics-container h-80 overflow-y-auto p-4 bg-gray-50 rounded-lg shadow-inner border border-gray-200">
-            <!-- 歌詞將由 JavaScript 動態生成 -->
+                <!-- 音訊播放器 -->
+                <div class="p-4 bg-amber-200 rounded-xl shadow-inner">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">播放控制</h3>
+                    <audio controls class="w-full rounded-lg shadow-md"
+                           src="http://googleusercontent.com/file_content/0"
+                           onerror="alert('音訊檔案載入失敗。請檢查檔案連結是否正確。')">
+                        您的瀏覽器不支援此音訊播放器。
+                    </audio>
+                    <p class="text-sm text-amber-800 mt-2">（音源：mp301.mp3）</p>
+                </div>
+            </div>
+
+            <!-- 右側：歌詞內容 (佔 2/3 寬度) -->
+            <div class="md:col-span-2 p-6 bg-white rounded-2xl shadow-xl border border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 pb-2 border-b border-gray-300">歌詞</h2>
+                <!-- 歌詞容器，在桌面有固定高度並可捲動 -->
+                <div class="text-gray-700 leading-relaxed space-y-4 md:h-[600px] overflow-y-auto custom-scrollbar">
+
+                    <!-- Verse 1 -->
+                    <div>
+                        <p class="font-bold text-amber-600">(Verse 1)</p>
+                        <p>十年光景，一眨眼匆匆過</p>
+                        <p>回頭望，走過多少街角與日落</p>
+                        <p>那時的夢想，現在還在不在心窩</p>
+                        <p>只有你知道，我所有不安的訴說</p>
+                        <p>你總是靜靜聽著，我的每個脆弱</p>
+                    </div>
+
+                    <!-- Verse 2 -->
+                    <div>
+                        <p class="font-bold text-amber-600">(Verse 2)</p>
+                        <p>記不清多少次，在深夜裡長談</p>
+                        <p>一杯咖啡，或一瓶啤酒，我們不覺疲倦</p>
+                        <p>聊著工作的煩惱，或感情的糾纏</p>
+                        <p>那些沒對別人開口的，對你沒有隱瞞</p>
+                        <p>你的回答，總能讓我心頭稍安</p>
+                    </div>
+
+                    <!-- Chorus -->
+                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-amber-500">
+                        <p class="font-bold text-amber-700">(Chorus)</p>
+                        <p>啊，一路相伴，十年情誼深長</p>
+                        <p>一起流淚，分擔每一次的悲傷</p>
+                        <p>一起歡笑，共享每一次的陽光</p>
+                        <p>你是我生活裡，最堅實的牆</p>
+                        <p>我的知己，我的依靠，我的力量</p>
+                    </div>
+
+                    <!-- Verse 3 -->
+                    <div>
+                        <p class="font-bold text-amber-600">(Verse 3)</p>
+                        <p>曾為彼此的成就，舉杯慶祝狂歡</p>
+                        <p>也曾為對方的低谷，默默守候心酸</p>
+                        <p>你懂我一個眼神，勝過千言萬語的交換</p>
+                        <p>我們是彼此過去、現在，緊密相連的橋段</p>
+                        <p>這份默契，是歲月最美的饋贈，無從計算</p>
+                    </div>
+
+                    <!-- Bridge -->
+                    <div>
+                        <p class="font-bold text-amber-600">(Bridge)</p>
+                        <p>人生起伏，風雨不斷，誰能永遠不迷惘</p>
+                        <p>但只要有你，我就能重新找到方向</p>
+                        <p>你是我疲憊時，最溫暖的港灣</p>
+                        <p>給我信心，讓我勇敢，不再畏懼前方</p>
+                        <p>這份支持，比什麼都重要，永遠不會泛黃</p>
+                    </div>
+
+                    <!-- Chorus (Repeat) -->
+                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-amber-500">
+                        <p class="font-bold text-amber-700">(Chorus)</p>
+                        <p>啊，一路相伴，十年情誼深長</p>
+                        <p>一起流淚，分擔每一次的悲傷</p>
+                        <p>一起歡笑，共享每一次的陽光</p>
+                        <p>你是我生活裡，最堅實的牆</p>
+                        <p>我的知己，我的依靠，我的力量</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </div>
-
-    <script>
-        // ------------------ 歌詞數據 ------------------
-        // 為了簡單演示即時歌詞效果，這裡設定了與音樂節奏無關的模擬時間點。
-        // 在實際應用中，您需要精確的歌詞時間軸 (LRC/SRT 格式) 來達到精確同步。
-        const lyricsData = [
-            { time: 0, text: "【Intro / 暖場音樂】" },
-            { time: 3, text: "(Verse 1)" },
-            { time: 5, text: "十年光景，一眨眼匆匆過" },
-            { time: 8, text: "回頭望，走過多少街角與日落" },
-            { time: 12, text: "那時的夢想，現在還在不在心窩" },
-            { time: 16, text: "只有你知道，我所有不安的訴說" },
-            { time: 20, text: "你總是靜靜聽著，我的每個脆弱" },
-            { time: 25, text: "(Verse 2)" },
-            { time: 28, text: "記不清多少次，在深夜裡長談" },
-            { time: 32, text: "一杯咖啡，或一瓶啤酒，我們不覺疲倦" },
-            { time: 36, text: "聊著工作的煩惱，或感情的糾纏" },
-            { time: 40, text: "那些沒對別人開口的，對你沒有隱瞞" },
-            { time: 44, text: "你的回答，總能讓我心頭稍安" },
-            { time: 48, text: "(Chorus)" },
-            { time: 51, text: "啊，一路相伴，十年情誼深長" },
-            { time: 55, text: "一起流淚，分擔每一次的悲傷" },
-            { time: 59, text: "一起歡笑，共享每一次的陽光" },
-            { time: 63, text: "你是我生活裡，最堅實的牆" },
-            { time: 67, text: "我的知己，我的依靠，我的力量" },
-            { time: 72, text: "【音樂間奏】" },
-            { time: 75, text: "(Verse 3)" },
-            { time: 78, text: "曾為彼此的成就，舉杯慶祝狂歡" },
-            { time: 82, text: "也曾為對方的低谷，默默守候心酸" },
-            { time: 86, text: "你懂我一個眼神，勝過千言萬語的交換" },
-            { time: 90, text: "我們是彼此過去、現在，緊密相連的橋段" },
-            { time: 94, text: "這份默契，是歲月最美的饋贈，無從計算" },
-            { time: 99, text: "(Bridge)" },
-            { time: 102, text: "人生起伏，風雨不斷，誰能永遠不迷惘" },
-            { time: 106, text: "但只要有你，我就能重新找到方向" },
-            { time: 110, text: "你是我疲憊時，最溫暖的港灣" },
-            { time: 114, text: "給我信心，讓我勇敢，不再畏懼前方" },
-            { time: 118, text: "這份支持，比什麼都重要，永遠不會泛黃" },
-            { time: 123, text: "(Chorus)" },
-            { time: 126, text: "啊，一路相伴，十年情誼深長" },
-            { time: 130, text: "一起流淚，分擔每一次的悲傷" },
-            { time: 134, text: "一起歡笑，共享每一次的陽光" },
-            { time: 138, text: "你是我生活裡，最堅實的牆" },
-            { time: 142, text: "我的知己，我的依靠，我的力量" },
-            { time: 148, text: "【結束】" },
-        ];
-
-        // ------------------ 檔案與元素設置 ------------------
-        const audioPlayer = document.getElementById('audioPlayer');
-        const lyricsContainer = document.getElementById('lyricsContainer');
-
-        // 假設兩個音訊檔案需要串接
-        const audioSources = [
-            "http://googleusercontent.com/file_content/1", // mp302.mp3 (較短的那個)
-            "http://googleusercontent.com/file_content/0"  // mp301.mp3 (較長的那個)
-        ];
-        let currentAudioIndex = 0;
-        let isPlaying = false;
-        let currentLyricIndex = -1;
-
-        // ------------------ 初始化 ------------------
-
-        // 1. 設置初始音訊源
-        function setInitialAudioSource() {
-            if (audioSources.length > 0) {
-                audioPlayer.src = audioSources[currentAudioIndex];
-                audioPlayer.load();
-            } else {
-                console.error("未找到音訊來源。");
-            }
-        }
-        setInitialAudioSource();
-
-        // 2. 渲染歌詞
-        function renderLyrics() {
-            lyricsContainer.innerHTML = lyricsData.map((lyric, index) =>
-                `<p id="lyric-${index}" class="text-base text-gray-700 leading-relaxed py-1 transition-colors duration-300 hover:text-gray-900 cursor-pointer" onclick="jumpToTime(${lyric.time})">${lyric.text}</p>`
-            ).join('');
-        }
-        renderLyrics();
-
-        // ------------------ 播放邏輯 ------------------
-
-        // 處理多檔案串接邏輯
-        audioPlayer.addEventListener('ended', () => {
-            currentAudioIndex++;
-            if (currentAudioIndex < audioSources.length) {
-                // 播放下一個檔案
-                audioPlayer.src = audioSources[currentAudioIndex];
-                audioPlayer.play();
-                console.log(`播放下一個音訊檔案: ${currentAudioIndex}`);
-            } else {
-                // 播放結束
-                currentAudioIndex = 0; // 重置
-                isPlaying = false;
-                console.log("所有音訊檔案播放完畢。");
-                // 可在此處添加結束提示
-            }
-        });
-
-        audioPlayer.addEventListener('play', () => {
-            isPlaying = true;
-        });
-
-        audioPlayer.addEventListener('pause', () => {
-            isPlaying = false;
-        });
-
-        // ------------------ 歌詞同步邏輯 ------------------
-
-        function updateLyrics() {
-            if (!isPlaying) return;
-
-            // 由於我們串接了兩個音檔，這裡的 currentTime 是一個複合時間，
-            // 為了簡化，我們只使用 audioPlayer.currentTime 作為時間基準，
-            // 模擬這兩個音檔已合併
-            const currentTime = audioPlayer.currentTime;
-
-            let nextLyricIndex = currentLyricIndex;
-            for (let i = currentLyricIndex + 1; i < lyricsData.length; i++) {
-                // 檢查下一句歌詞是否應該開始
-                if (currentTime >= lyricsData[i].time) {
-                    nextLyricIndex = i;
-                } else {
-                    break;
-                }
-            }
-
-            if (nextLyricIndex !== currentLyricIndex) {
-                // 移除舊的高亮
-                if (currentLyricIndex >= 0) {
-                    const oldLyricElement = document.getElementById(`lyric-${currentLyricIndex}`);
-                    if (oldLyricElement) {
-                        oldLyricElement.classList.remove('highlighted');
-                    }
-                }
-
-                // 設置新的高亮
-                currentLyricIndex = nextLyricIndex;
-                const newLyricElement = document.getElementById(`lyric-${currentLyricIndex}`);
-                if (newLyricElement) {
-                    newLyricElement.classList.add('highlighted');
-
-                    // 確保高亮歌詞在容器的可視範圍內 (自動滾動)
-                    const containerHeight = lyricsContainer.clientHeight;
-                    const elementTop = newLyricElement.offsetTop - lyricsContainer.offsetTop;
-                    const elementHeight = newLyricElement.offsetHeight;
-
-                    if (elementTop < lyricsContainer.scrollTop || elementTop + elementHeight > lyricsContainer.scrollTop + containerHeight) {
-                        // 滾動到高亮歌詞的位置，居中顯示
-                        lyricsContainer.scrollTop = elementTop - (containerHeight / 2) + (elementHeight / 2);
-                    }
-                }
-            }
-        }
-
-        // 讓用戶可以點擊歌詞跳轉
-        function jumpToTime(time) {
-            audioPlayer.currentTime = time;
-            // 重新開始同步，以確保高亮正確
-            currentLyricIndex = -1;
-            // 移除所有高亮
-            document.querySelectorAll('.highlighted').forEach(el => el.classList.remove('highlighted'));
-            // 播放
-            if (audioPlayer.paused) {
-                audioPlayer.play().catch(e => console.log("播放失敗: ", e));
-            }
-        }
-        window.jumpToTime = jumpToTime; // 暴露給 HTML 點擊事件
-
-        // 每 100 毫秒檢查一次音訊時間並更新歌詞
-        setInterval(updateLyrics, 100);
-
-    </script>
 </body>
 </html>

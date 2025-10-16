@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>互動式影片播放器</title>
+    <!-- 載入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 使用 Inter 字體 */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc; /* 淺灰色背景 */
+        }
+        /* 影片容器，確保影片在響應式設計中保持良好的外觀 */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 比例 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 1rem; /* 圓角 */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* 陰影效果 */
+        }
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* 確保影片完整顯示 */
+            background-color: #000; /* 影片背景為黑色 */
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#1e40af',
+                        'secondary-gray': '#4b5563',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="p-4 md:p-8">
+
+    <!-- 頁面標題和說明 -->
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-extrabold text-primary-blue mb-2">
+            互動式影片展示
+        </h1>
+        <p class="text-lg text-secondary-gray">
+            點擊播放並使用內建控制項來調整音量、全螢幕等功能。
+        </p>
+    </header>
+
+    <!-- 影片展示區塊 (響應式 Grid/Flexbox) -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+        <!-- 影片 1 -->
+        <div class="bg-white p-4 rounded-xl shadow-lg transition duration-300 hover:shadow-2xl">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">影片一：video01.mp4</h2>
+            <div class="video-container">
+                <video id="video1" controls loop muted playsinline>
+                    <!-- 影片來源：請確保檔案名稱正確 -->
+                    <source src="video01.mp4" type="video/mp4">
+                    您的瀏覽器不支援影片標籤。
+                </video>
+            </div>
+            <div class="flex justify-center mt-4">
+                <button onclick="togglePlayPause('video1')" class="bg-primary-blue text-white py-2 px-4 rounded-full font-medium hover:bg-blue-700 transition duration-150 shadow-md">
+                    播放/暫停
+                </button>
+            </div>
+        </div>
+
+        <!-- 影片 2 -->
+        <div class="bg-white p-4 rounded-xl shadow-lg transition duration-300 hover:shadow-2xl">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">影片二：video02.mp4</h2>
+            <div class="video-container">
+                <video id="video2" controls loop muted playsinline>
+                    <!-- 影片來源：請確保檔案名稱正確 -->
+                    <source src="video02.mp4" type="video/mp4">
+                    您的瀏覽器不支援影片標籤。
+                </video>
+            </div>
+            <div class="flex justify-center mt-4">
+                <button onclick="togglePlayPause('video2')" class="bg-primary-blue text-white py-2 px-4 rounded-full font-medium hover:bg-blue-700 transition duration-150 shadow-md">
+                    播放/暫停
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for basic interaction -->
+    <script>
+        /**
+         * 播放或暫停指定的影片元素
+         * @param {string} videoId - 影片元素的 ID
+         */
+        function togglePlayPause(videoId) {
+            const video = document.getElementById(videoId);
+            if (!video) {
+                console.error(`找不到 ID 為 ${videoId} 的影片元素。`);
+                return;
+            }
+
+            if (video.paused || video.ended) {
+                video.play().catch(error => {
+                    console.error("播放影片失敗：", error);
+                    // 在某些瀏覽器中，沒有使用者互動無法自動播放，提供訊息提示
+                    alert('無法自動播放影片。請檢查瀏覽器設定或手動點擊影片區域。');
+                });
+            } else {
+                video.pause();
+            }
+        }
+
+        /**
+         * 頁面載入完成後，嘗試靜音並載入影片
+         * 在許多瀏覽器中，影片必須靜音才能自動播放
+         */
+        window.onload = function() {
+            // 由於 Canvas 環境限制，無法確保 autoPlay 成功，但我們仍然設定靜音並載入
+            const video1 = document.getElementById('video1');
+            const video2 = document.getElementById('video2');
+
+            if(video1) video1.muted = true;
+            if(video2) video2.muted = true;
+
+            console.log('影片元素已載入並設定為靜音。');
+        };
+    </script>
+</body>
+</html>

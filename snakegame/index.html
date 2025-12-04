@@ -70,6 +70,27 @@
             z-index: 10;
         }
 
+        /* 暫停按鈕樣式 */
+        #pause-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 8px 16px;
+            font-size: 1rem;
+            background-color: rgba(51, 51, 51, 0.8);
+            color: white;
+            border: 1px solid #555;
+            border-radius: 5px;
+            cursor: pointer;
+            pointer-events: auto; /* 恢復點擊感應 */
+            z-index: 15;
+            transition: background-color 0.2s;
+        }
+
+        #pause-btn:hover {
+            background-color: rgba(85, 85, 85, 0.9);
+        }
+
         /* 遊戲結束/開始 遮罩 */
         #overlay {
             position: absolute;
@@ -176,11 +197,12 @@
         
         <div id="ui-layer">
             <div class="score-board">分數: <span id="score">0</span></div>
+            <button id="pause-btn">暫停</button>
         </div>
 
         <div id="overlay">
             <h2 id="overlay-title">準備好了嗎？</h2>
-            <p id="overlay-msg">使用鍵盤方向鍵或下方按鈕控制</p>
+            <p id="overlay-msg">使用鍵盤方向鍵或下方按鈕控制<br><br><small>空白鍵可暫停</small></p>
             <button class="btn-primary" onclick="startGame()">開始遊戲</button>
         </div>
     </div>
@@ -213,6 +235,7 @@
         let gameSpeed = 100;
         let gameLoopTimeout;
         let isGameRunning = false;
+        let isPaused = false; // 新增暫停狀態
 
         const gameCanvas = document.getElementById("gameCanvas");
         const ctx = gameCanvas.getContext("2d");
@@ -221,6 +244,7 @@
         const overlayMsg = document.getElementById("overlay-msg");
         const startBtn = document.querySelector("#overlay button");
         const scoreElement = document.getElementById("score");
+        const pauseBtn = document.getElementById("pause-btn");
 
         // 初始化遊戲狀態
         function initGame() {
@@ -239,17 +263,53 @@
             gameSpeed = 100;
             scoreElement.innerHTML = score;
             createFood();
+            
+            // 重置暫停狀態
+            isPaused = false;
+            pauseBtn.innerText = "暫停";
         }
 
         // 開始遊戲
         function startGame() {
-            if (isGameRunning) return;
+            if (isGameRunning && !isPaused) return; // 避免重複開始
             
             initGame();
             overlay.style.display = "none";
             isGameRunning = true;
             main();
         }
+
+        // 切換暫停功能
+        function togglePause() {
+            if (!isGameRunning) return; // 遊戲未開始不能暫停
+
+            if (isPaused) {
+                // 恢復遊戲
+                isPaused = false;
+                pauseBtn.innerText = "暫停";
+                main();
+            } else {
+                // 暫停遊戲
+                isPaused = true;
+                clearTimeout(gameLoopTimeout);
+                pauseBtn.innerText = "繼續";
+                
+                // 在畫布上顯示暫停文字
+                ctx.fillStyle = "white";
+                ctx.font = "bold 60px 'Segoe UI', Arial";
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.fillText("暫停中", gameCanvas.width / 2, gameCanvas.height / 2);
+            }
+        }
+
+        // 綁定暫停按鈕點擊事件
+        pauseBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // 防止觸發其他畫布點擊
+            togglePause();
+            // 讓按鈕失去焦點，避免按 Enter/Space 時重複觸發按鈕點擊
+            this.blur(); 
+        });
 
         // 遊戲主迴圈
         function main() {
@@ -261,6 +321,10 @@
             // 設置遊戲速度
             gameLoopTimeout = setTimeout(function onTick() {
                 changingDirection = false;
+                
+                // 檢查是否暫停，如果暫停就不繼續執行
+                if (isPaused) return;
+
                 clearCanvas();
                 drawFood();
                 advanceSnake();
@@ -274,6 +338,9 @@
         // 結束遊戲處理
         function endGame() {
             isGameRunning = false;
+            isPaused = false;
+            pauseBtn.innerText = "暫停"; // 重置按鈕文字
+            
             overlayTitle.innerText = "遊戲結束";
             overlayMsg.innerText = `最終分數: ${score}`;
             startBtn.innerText = "再玩一次";
@@ -365,9 +432,20 @@
             const RIGHT_KEY = 39;
             const UP_KEY = 38;
             const DOWN_KEY = 40;
+            const SPACE_KEY = 32;
             
             // 處理手機按鈕點擊傳入的虛擬 keyCode
             const keyPressed = event.keyCode || event;
+
+            // 空白鍵暫停功能
+            if (keyPressed === SPACE_KEY) {
+                event.preventDefault(); // 防止滾動
+                togglePause();
+                return;
+            }
+
+            // 如果暫停中，不接受方向控制
+            if (isPaused) return;
 
             if (changingDirection) return;
             changingDirection = true;

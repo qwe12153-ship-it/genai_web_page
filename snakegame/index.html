@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>經典貪食蛇 2D</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --game-bg: #000000;
+            --accent-color: #4CAF50;
+            --text-color: #ffffff;
+            --snake-color: #00ff00;
+            --food-color: #ff0000;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            touch-action: manipulation; /* 防止雙擊縮放 */
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 2rem;
+            text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+        }
+
+        #game-container {
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border: 4px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+            background-color: var(--game-bg);
+            max-width: 100%;
+            height: auto;
+        }
+
+        #ui-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* 讓點擊穿透到 canvas */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .score-board {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: left;
+            text-shadow: 1px 1px 2px black;
+            z-index: 10;
+        }
+
+        /* 遊戲結束/開始 遮罩 */
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+            pointer-events: auto;
+            text-align: center;
+        }
+
+        #overlay h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        #overlay p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+
+        button.btn-primary {
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.1s, background-color 0.2s;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+        }
+
+        button.btn-primary:active {
+            transform: scale(0.95);
+        }
+
+        button.btn-primary:hover {
+            background-color: #45a049;
+        }
+
+        /* 手機版虛擬控制器 */
+        #mobile-controls {
+            margin-top: 20px;
+            display: none; /* 預設隱藏，透過 JS 偵測開啟 */
+            grid-template-columns: 60px 60px 60px;
+            grid-template-rows: 60px 60px;
+            gap: 10px;
+            justify-items: center;
+        }
+
+        .control-btn {
+            width: 60px;
+            height: 60px;
+            background-color: #333;
+            border-radius: 50%;
+            border: 2px solid #555;
+            color: white;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .control-btn:active {
+            background-color: #555;
+            transform: scale(0.9);
+        }
+
+        #btn-up { grid-column: 2; grid-row: 1; }
+        #btn-left { grid-column: 1; grid-row: 2; }
+        #btn-down { grid-column: 2; grid-row: 2; }
+        #btn-right { grid-column: 3; grid-row: 2; }
+
+        @media (max-width: 600px) {
+            #mobile-controls {
+                display: grid;
+            }
+            h1 { font-size: 1.5rem; }
+            #game-container {
+                border-width: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>貪食蛇 2D</h1>
+
+    <div id="game-container">
+        <canvas id="gameCanvas" width="800" height="800"></canvas>
+        
+        <div id="ui-layer">
+            <div class="score-board">分數: <span id="score">0</span></div>
+        </div>
+
+        <div id="overlay">
+            <h2 id="overlay-title">準備好了嗎？</h2>
+            <p id="overlay-msg">使用鍵盤方向鍵或下方按鈕控制</p>
+            <button class="btn-primary" onclick="startGame()">開始遊戲</button>
+        </div>
+    </div>
+
+    <!-- 虛擬按鍵 (手機/平板用) -->
+    <div id="mobile-controls">
+        <div class="control-btn" id="btn-up">▲</div>
+        <div class="control-btn" id="btn-left">◀</div>
+        <div class="control-btn" id="btn-down">▼</div>
+        <div class="control-btn" id="btn-right">▶</div>
+    </div>
+
+    <script>
+        // 遊戲常數與變數
+        const CANVAS_BORDER_COLOUR = '#333';
+        const CANVAS_BACKGROUND_COLOUR = 'black';
+        const SNAKE_COLOUR = 'lightgreen';
+        const SNAKE_BORDER_COLOUR = 'darkgreen';
+        const FOOD_COLOUR = 'red';
+        const FOOD_BORDER_COLOUR = 'darkred';
+        const UNIT = 20; // 擴大基礎單位到 20px
+
+        let snake = [];
+        let score = 0;
+        let changingDirection = false;
+        let foodX;
+        let foodY;
+        let dx = UNIT;
+        let dy = 0;
+        let gameSpeed = 100;
+        let gameLoopTimeout;
+        let isGameRunning = false;
+
+        const gameCanvas = document.getElementById("gameCanvas");
+        const ctx = gameCanvas.getContext("2d");
+        const overlay = document.getElementById("overlay");
+        const overlayTitle = document.getElementById("overlay-title");
+        const overlayMsg = document.getElementById("overlay-msg");
+        const startBtn = document.querySelector("#overlay button");
+        const scoreElement = document.getElementById("score");
+
+        // 初始化遊戲狀態
+        function initGame() {
+            // 蛇的初始位置根據 UNIT 調整
+            snake = [
+                {x: 400, y: 400},
+                {x: 380, y: 400},
+                {x: 360, y: 400},
+                {x: 340, y: 400},
+                {x: 320, y: 400}
+            ];
+            score = 0;
+            dx = UNIT;
+            dy = 0;
+            changingDirection = false;
+            gameSpeed = 100;
+            scoreElement.innerHTML = score;
+            createFood();
+        }
+
+        // 開始遊戲
+        function startGame() {
+            if (isGameRunning) return;
+            
+            initGame();
+            overlay.style.display = "none";
+            isGameRunning = true;
+            main();
+        }
+
+        // 遊戲主迴圈
+        function main() {
+            if (didGameEnd()) {
+                endGame();
+                return;
+            }
+
+            // 設置遊戲速度
+            gameLoopTimeout = setTimeout(function onTick() {
+                changingDirection = false;
+                clearCanvas();
+                drawFood();
+                advanceSnake();
+                drawSnake();
+                
+                // 遞迴呼叫
+                if (isGameRunning) main();
+            }, gameSpeed);
+        }
+
+        // 結束遊戲處理
+        function endGame() {
+            isGameRunning = false;
+            overlayTitle.innerText = "遊戲結束";
+            overlayMsg.innerText = `最終分數: ${score}`;
+            startBtn.innerText = "再玩一次";
+            overlay.style.display = "flex";
+        }
+
+        // 清空畫布
+        function clearCanvas() {
+            ctx.fillStyle = CANVAS_BACKGROUND_COLOUR;
+            ctx.strokestyle = CANVAS_BORDER_COLOUR;
+            ctx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
+            ctx.strokeRect(0, 0, gameCanvas.width, gameCanvas.height);
+        }
+
+        // 畫食物
+        function drawFood() {
+            ctx.fillStyle = FOOD_COLOUR;
+            ctx.strokestyle = FOOD_BORDER_COLOUR;
+            ctx.beginPath();
+            // 畫圓形食物，半徑為單位的一半
+            ctx.arc(foodX + UNIT/2, foodY + UNIT/2, UNIT/2, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        // 移動蛇的邏輯
+        function advanceSnake() {
+            const head = {x: snake[0].x + dx, y: snake[0].y + dy};
+            snake.unshift(head);
+
+            const didEatFood = snake[0].x === foodX && snake[0].y === foodY;
+            if (didEatFood) {
+                score += 10;
+                scoreElement.innerHTML = score;
+                // 加速
+                if (gameSpeed > 50) gameSpeed -= 2; 
+                createFood();
+            } else {
+                snake.pop();
+            }
+        }
+
+        // 判斷遊戲是否結束
+        function didGameEnd() {
+            for (let i = 4; i < snake.length; i++) {
+                if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true;
+            }
+
+            const hitLeftWall = snake[0].x < 0;
+            const hitRightWall = snake[0].x > gameCanvas.width - UNIT;
+            const hitToptWall = snake[0].y < 0;
+            const hitBottomWall = snake[0].y > gameCanvas.height - UNIT;
+
+            return hitLeftWall || hitRightWall || hitToptWall || hitBottomWall;
+        }
+
+        // 生成食物
+        function createFood() {
+            foodX = randomCoord(0, gameCanvas.width - UNIT);
+            foodY = randomCoord(0, gameCanvas.height - UNIT);
+
+            // 確保食物不會生在蛇身上
+            snake.forEach(function isFoodOnSnake(part) {
+                const foodIsoNsnake = part.x == foodX && part.y == foodY;
+                if (foodIsoNsnake) createFood();
+            });
+        }
+
+        // 輔助函數：生成單位的倍數隨機數
+        function randomCoord(min, max) {
+            return Math.round((Math.random() * (max - min) + min) / UNIT) * UNIT;
+        }
+
+        // 畫蛇
+        function drawSnake() {
+            snake.forEach(drawSnakePart);
+        }
+
+        function drawSnakePart(snakePart, index) {
+            ctx.fillStyle = index === 0 ? "#00AA00" : SNAKE_COLOUR; // 頭部顏色不同
+            ctx.strokestyle = SNAKE_BORDER_COLOUR;
+            ctx.fillRect(snakePart.x, snakePart.y, UNIT, UNIT);
+            ctx.strokeRect(snakePart.x, snakePart.y, UNIT, UNIT);
+        }
+
+        // 鍵盤控制
+        function changeDirection(event) {
+            const LEFT_KEY = 37;
+            const RIGHT_KEY = 39;
+            const UP_KEY = 38;
+            const DOWN_KEY = 40;
+            
+            // 處理手機按鈕點擊傳入的虛擬 keyCode
+            const keyPressed = event.keyCode || event;
+
+            if (changingDirection) return;
+            changingDirection = true;
+
+            const goingUp = dy === -UNIT;
+            const goingDown = dy === UNIT;
+            const goingRight = dx === UNIT;
+            const goingLeft = dx === -UNIT;
+
+            if (keyPressed === LEFT_KEY && !goingRight) {
+                dx = -UNIT;
+                dy = 0;
+            }
+            if (keyPressed === UP_KEY && !goingDown) {
+                dx = 0;
+                dy = -UNIT;
+            }
+            if (keyPressed === RIGHT_KEY && !goingLeft) {
+                dx = UNIT;
+                dy = 0;
+            }
+            if (keyPressed === DOWN_KEY && !goingUp) {
+                dx = 0;
+                dy = UNIT;
+            }
+        }
+
+        // 監聽鍵盤
+        document.addEventListener("keydown", changeDirection);
+
+        // 綁定虛擬按鈕事件
+        document.getElementById('btn-up').addEventListener('click', () => changeDirection(38));
+        document.getElementById('btn-down').addEventListener('click', () => changeDirection(40));
+        document.getElementById('btn-left').addEventListener('click', () => changeDirection(37));
+        document.getElementById('btn-right').addEventListener('click', () => changeDirection(39));
+        
+        // 防止手機長按選取
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
+</body>
+</html>
